@@ -1,0 +1,696 @@
+<!DOCTYPE html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>מוסקבה, רוסיה – מידע למטייל</title><meta name="theme-color" content="#b3122b"><link rel="manifest" href="manifest.json"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><style>:root{--red:#b3122b;--red2:#e63946;--navy:#14213d;--gold:#f2b705;--gold2:#ffd54a;--bg:#fff8ef;--card:#fff;--ink:#1d2433;--mut:#6b7280;--ok:#1b9e5a;--blue:#1d6fd6;--teal:#0e9aa7;--pur:#7b3fbf;--orange:#f47c20}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:"Segoe UI",Arial,"Noto Sans Hebrew",sans-serif;font-size:15px;direction:rtl}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:var(--blue)}
+header{position:sticky;top:0;z-index:50;background:linear-gradient(100deg,#7a0c1e,#b3122b 45%,#14213d);color:#fff;display:flex;align-items:center;gap:8px;padding:3px 8px;min-height:40px;box-shadow:0 2px 8px #0004}
+header img{width:32px;height:32px;border-radius:8px;background:#fff2}
+header .t{flex:1;line-height:1.1;min-width:0}
+header .t b{display:block;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+header .t small{font-size:11px;opacity:.95}
+header .t small i{font-style:normal;color:var(--gold2);font-weight:700;text-shadow:0 0 6px #f2b70088}
+.hb{background:#ffffff22;border:0;color:#fff;border-radius:10px;width:34px;height:34px;font-size:18px;cursor:pointer}
+#wx{background:linear-gradient(120deg,#1d3b78,#2a5fb0 60%,#3f8bd8);color:#fff;padding:6px 8px}
+#wx .now{display:flex;align-items:center;gap:10px}
+#wx .big{font-size:34px;font-weight:700;line-height:1}
+#wx .days{display:flex;gap:6px;overflow-x:auto;margin-top:6px;padding-bottom:3px}
+#wx .d{flex:0 0 auto;min-width:62px;background:#ffffff22;border-radius:10px;padding:4px 6px;text-align:center;font-size:12px}
+#wx .d b{display:block}
+#btnToday{display:block;width:100%;margin:6px 0 0;background:linear-gradient(135deg,var(--gold),var(--orange));color:#2b1b00;border:0;border-radius:22px;padding:9px 14px;font-weight:800;font-size:15px;cursor:pointer;box-shadow:0 3px 8px #0005}
+#alert{background:#fff1c9;border-bottom:2px solid var(--gold);padding:6px 10px;font-size:13px;display:flex;gap:8px;align-items:center}
+#alert a{font-weight:700}
+nav#tabs{position:sticky;top:40px;z-index:40;background:#fff;display:flex;gap:6px;overflow-x:auto;padding:6px;box-shadow:0 2px 6px #0002}
+nav#tabs button{flex:0 0 auto;border:0;border-radius:20px;padding:7px 12px;background:#eee;font-weight:600;cursor:pointer;white-space:nowrap}
+nav#tabs button.on{color:#fff;box-shadow:0 2px 6px #0004}
+main{padding:8px;max-width:980px;margin:auto;padding-bottom:70px}
+h2{margin:6px 0;font-size:19px;color:var(--red)}
+.bar{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:6px 0}
+.chip{border:1px solid #ddd;background:#fff;border-radius:16px;padding:4px 10px;font-size:13px;cursor:pointer}
+.chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.btn{border:0;border-radius:10px;padding:7px 11px;font-weight:600;cursor:pointer;background:var(--navy);color:#fff;font-size:13px}
+.btn.r{background:var(--red)}.btn.g{background:var(--ok)}.btn.o{background:var(--orange)}.btn.l{background:#e8edf5;color:var(--navy)}.btn.gold{background:var(--gold);color:#2b1b00}
+.btn.sm{padding:4px 8px;font-size:12px}
+input[type=text],input[type=search],input[type=number],select,textarea{border:1px solid #cfd6e4;border-radius:9px;padding:7px 9px;background:#fff;max-width:100%}
+textarea{width:100%;min-height:60px}
+.card{background:var(--card);border-radius:14px;box-shadow:0 2px 10px #0002;margin:10px 0;overflow:hidden;border-inline-start:5px solid var(--c,var(--red))}
+.card.hid{opacity:.5}
+.card .ph{height:150px;background:linear-gradient(135deg,var(--c,#b3122b),#14213d);display:flex;align-items:center;justify-content:center;font-size:54px;color:#fff;position:relative;overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.card .ph small{position:absolute;bottom:2px;left:4px;background:#0008;color:#fff;font-size:10px;padding:1px 5px;border-radius:6px}
+.card .bd{padding:8px 10px}
+.card h3{margin:0;font-size:17px}
+.card h3 span{display:block;font-size:12px;color:var(--mut);font-weight:400;direction:ltr;text-align:right}
+.meta{display:flex;flex-wrap:wrap;gap:5px;margin:5px 0}
+.meta span{background:#f1f4fa;border-radius:12px;padding:2px 8px;font-size:12px}
+.acts{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.more{display:none;border-top:1px dashed #ddd;margin-top:8px;padding-top:6px;font-size:14px}
+.more.on{display:block}
+.more dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:3px 10px}
+.more dt{font-weight:700;color:var(--navy)}.more dd{margin:0}
+.stars span{cursor:pointer;font-size:20px;color:#ccc}.stars span.on{color:var(--gold)}
+.warn{background:#ffe3e3;border-inline-start:4px solid var(--red2);padding:6px 9px;border-radius:8px;margin:6px 0;font-size:13px}
+.info{background:#e6f1ff;border-inline-start:4px solid var(--blue);padding:6px 9px;border-radius:8px;margin:6px 0;font-size:13px}
+.map{height:46vh;min-height:300px;border-radius:12px;border:2px solid var(--navy);position:relative;z-index:1}
+.map.full,.mapwrap.full{position:fixed!important;inset:0;height:100vh!important;z-index:900;border-radius:0;background:#fff}
+.mapwrap.full .map{height:calc(100vh - 46px)}
+.mapwrap .fsb{display:none}.mapwrap.full .fsb{display:flex;position:relative;z-index:901;background:#fff;padding:4px}
+.mk{font-size:20px;text-align:center;line-height:26px;background:#fff;border:2px solid var(--c,#b3122b);border-radius:50%;width:30px;height:30px;box-shadow:0 1px 4px #0006}
+table.t{width:100%;border-collapse:collapse;font-size:14px;background:#fff;border-radius:10px;overflow:hidden}
+table.t th{background:var(--navy);color:#fff;padding:6px}
+table.t td{padding:6px;border-bottom:1px solid #eee;vertical-align:middle}
+.ru{direction:ltr;unicode-bidi:isolate;font-weight:600}
+.lg{display:flex;align-items:center;gap:6px;margin:3px 0}
+.lg i{display:inline-block;width:26px;height:10px;border-radius:5px}
+.modal{position:fixed;inset:0;background:#000a;z-index:1000;display:flex;align-items:flex-end;justify-content:center}
+.modal>div{background:#fff;width:100%;max-width:720px;max-height:92vh;overflow:auto;border-radius:18px 18px 0 0;padding:12px}
+.modal h3{margin:0 0 8px;color:var(--red)}
+.fld{display:block;margin:7px 0}.fld>b{display:block;font-size:13px;margin-bottom:2px}
+.fld input[type=text],.fld select,.fld textarea{width:100%}
+.dtw{display:flex;gap:4px}.dtw input{flex:1;text-align:right;direction:ltr}
+.cal{position:fixed;inset:0;background:#0007;z-index:1200;display:flex;align-items:center;justify-content:center}
+.cal>div{background:#fff;border-radius:16px;padding:10px;width:min(330px,94vw)}
+.cal .hd{display:flex;justify-content:space-between;align-items:center;font-weight:700;margin-bottom:6px}
+.cal .g{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center}
+.cal .g b{font-size:12px;color:var(--mut)}
+.cal .g button{border:0;border-radius:8px;background:#f1f4fa;padding:8px 0;cursor:pointer}
+.cal .g button.t{background:var(--gold)}.cal .g button.s{background:var(--red);color:#fff}
+.day{background:#fff;border-radius:12px;margin:10px 0;box-shadow:0 2px 8px #0002;overflow:hidden}
+.day>h4{margin:0;padding:7px 10px;color:#fff;display:flex;justify-content:space-between;gap:6px;flex-wrap:wrap}
+.stop{display:flex;gap:8px;padding:7px 10px;border-bottom:1px solid #eee;align-items:flex-start}
+.stop .n{background:var(--navy);color:#fff;border-radius:50%;min-width:24px;height:24px;text-align:center;line-height:24px;font-size:12px}
+.fab{position:fixed;bottom:12px;left:12px;z-index:60;display:flex;gap:6px}
+#toast{position:fixed;bottom:70px;left:50%;transform:translateX(-50%);background:#222;color:#fff;padding:8px 14px;border-radius:18px;z-index:2000;display:none;max-width:90vw;text-align:center}
+#dup{position:fixed;inset:0;background:var(--navy);color:#fff;z-index:3000;display:none;align-items:center;justify-content:center;text-align:center;padding:20px;font-size:20px}
+.sec{background:linear-gradient(90deg,var(--c,#b3122b),#14213d);color:#fff;padding:6px 10px;border-radius:10px;margin:12px 0 4px;font-weight:700}
+@media print{header,#wx,#alert,nav,.fab,.acts,.btn,.bar,.noprint{display:none!important}body{background:#fff}.day{box-shadow:none;border:1px solid #ccc;break-inside:avoid}.map{display:none}}
+</style></head><body>
+<header id="hdr"></header><div id="wx"></div><div id="alert"></div><nav id="tabs"></nav><main id="main"></main><div id="toast"></div><div id="dup"></div>
+<script>const ICON="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMxZDNiNzgiLz48c3RvcCBvZmZzZXQ9Ii43IiBzdG9wLWNvbG9yPSIjN2EwYzFlIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYjMxMjJiIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSI5NiIgZmlsbD0idXJsKCNnKSIvPgo8Y2lyY2xlIGN4PSI0MDAiIGN5PSIxMTAiIHI9IjM0IiBmaWxsPSIjZmZkNTRhIiBvcGFjaXR5PSIuOSIvPgo8cmVjdCB4PSIxMTAiIHk9IjM1NSIgd2lkdGg9IjI5MiIgaGVpZ2h0PSI5NSIgZmlsbD0iI2Y1ZTZjOCIvPjxyZWN0IHg9IjExMCIgeT0iNDQwIiB3aWR0aD0iMjkyIiBoZWlnaHQ9IjEyIiBmaWxsPSIjYzlhODdjIi8+CjxwYXRoIGQ9Ik0xMzUsNDUwIHYtMzggYTE0LDE0IDAgMCAxIDI4LDAgdjM4eiIgZmlsbD0iIzdhMGMxZSIvPjxwYXRoIGQ9Ik0xODUsNDUwIHYtMzggYTE0LDE0IDAgMCAxIDI4LDAgdjM4eiIgZmlsbD0iIzdhMGMxZSIvPjxwYXRoIGQ9Ik0yMzUsNDUwIHYtMzggYTE0LDE0IDAgMCAxIDI4LDAgdjM4eiIgZmlsbD0iIzdhMGMxZSIvPjxwYXRoIGQ9Ik0yODUsNDUwIHYtMzggYTE0LDE0IDAgMCAxIDI4LDAgdjM4eiIgZmlsbD0iIzdhMGMxZSIvPjxwYXRoIGQ9Ik0zMzUsNDUwIHYtMzggYTE0LDE0IDAgMCAxIDI4LDAgdjM4eiIgZmlsbD0iIzdhMGMxZSIvPjxwYXRoIGQ9Ik0zNjgsNDUwIHYtMzggYTE0LDE0IDAgMCAxIDI4LDAgdjM4eiIgZmlsbD0iIzdhMGMxZSIvPgo8cmVjdCB4PSIyMjYiIHk9IjIxNSIgd2lkdGg9IjYwIiBoZWlnaHQ9IjE0NSIgZmlsbD0iI2U5ZDZiMCIvPgo8cGF0aCBkPSJNMjI2LDIxNSBMMjU2LDE2MCBMMjg2LDIxNVoiIGZpbGw9IiNiMzEyMmIiLz4KPHBhdGggZD0iTTIxMiwxNjAgQzE5Mi4yLDExNS4wIDI0Ny4yLDk4LjAgMjU2LDYwIEMyNjQuOCw5OC4wIDMxOS44LDExNS4wIDMwMCwxNjAgWiIgZmlsbD0iI2YyYjcwNSIvPjxwYXRoIGQ9Ik0yNTYsNjAgTDI1NiwxNjAiIHN0cm9rZT0iI2IzMTIyYiIgc3Ryb2tlLXdpZHRoPSI1IiBvcGFjaXR5PSIuNzUiLz48cGF0aCBkPSJNMjU2LDYwIFEyMTQuMiwxMTAuMCAyMzQuMCwxNjAiIHN0cm9rZT0iI2IzMTIyYiIgc3Ryb2tlLXdpZHRoPSI0IiBmaWxsPSJub25lIiBvcGFjaXR5PSIuNiIvPjxwYXRoIGQ9Ik0yNTYsNjAgUTI5Ny44LDExMC4wIDI3OC4wLDE2MCIgc3Ryb2tlPSIjYjMxMjJiIiBzdHJva2Utd2lkdGg9IjQiIGZpbGw9Im5vbmUiIG9wYWNpdHk9Ii42Ii8+PHJlY3QgeD0iMjM2LjIiIHk9IjE2MCIgd2lkdGg9IjM5LjYiIGhlaWdodD0iMTQiIGZpbGw9IiNmNWU2YzgiLz48cGF0aCBkPSJNMjU2LDM0IFY2MCIgc3Ryb2tlPSIjZjJiNzA1IiBzdHJva2Utd2lkdGg9IjUiLz48Y2lyY2xlIGN4PSIyNTYiIGN5PSIzMCIgcj0iNyIgZmlsbD0iI2YyYjcwNSIvPgo8cGF0aCBkPSJNMTE0LDM1NSBDOTcuODAwMDAwMDAwMDAwMDEsMzE5LjkgMTQyLjgsMzA2LjY0IDE1MCwyNzcgQzE1Ny4yLDMwNi42NCAyMDIuMiwzMTkuOSAxODYsMzU1IFoiIGZpbGw9IiMyZTllNGYiLz48cGF0aCBkPSJNMTUwLDI3NyBMMTUwLDM1NSIgc3Ryb2tlPSIjZjJiNzA1IiBzdHJva2Utd2lkdGg9IjUiIG9wYWNpdHk9Ii43NSIvPjxwYXRoIGQ9Ik0xNTAsMjc3IFExMTUuODAwMDAwMDAwMDAwMDEsMzE2LjAgMTMyLjAsMzU1IiBzdHJva2U9IiNmMmI3MDUiIHN0cm9rZS13aWR0aD0iNCIgZmlsbD0ibm9uZSIgb3BhY2l0eT0iLjYiLz48cGF0aCBkPSJNMTUwLDI3NyBRMTg0LjIsMzE2LjAgMTY4LjAsMzU1IiBzdHJva2U9IiNmMmI3MDUiIHN0cm9rZS13aWR0aD0iNCIgZmlsbD0ibm9uZSIgb3BhY2l0eT0iLjYiLz48cmVjdCB4PSIxMzMuOCIgeT0iMzU1IiB3aWR0aD0iMzIuNCIgaGVpZ2h0PSIxNCIgZmlsbD0iI2Y1ZTZjOCIvPjxwYXRoIGQ9Ik0xNTAsMjUxIFYyNzciIHN0cm9rZT0iI2YyYjcwNSIgc3Ryb2tlLXdpZHRoPSI1Ii8+PGNpcmNsZSBjeD0iMTUwIiBjeT0iMjQ3IiByPSI3IiBmaWxsPSIjZjJiNzA1Ii8+CjxwYXRoIGQ9Ik0zMjYsMzU1IEMzMDkuOCwzMTkuOSAzNTQuOCwzMDYuNjQgMzYyLDI3NyBDMzY5LjIsMzA2LjY0IDQxNC4yLDMxOS45IDM5OCwzNTUgWiIgZmlsbD0iIzFkNmZkNiIvPjxwYXRoIGQ9Ik0zNjIsMjc3IEwzNjIsMzU1IiBzdHJva2U9IiNmZmQ1NGEiIHN0cm9rZS13aWR0aD0iNSIgb3BhY2l0eT0iLjc1Ii8+PHBhdGggZD0iTTM2MiwyNzcgUTMyNy44LDMxNi4wIDM0NC4wLDM1NSIgc3Ryb2tlPSIjZmZkNTRhIiBzdHJva2Utd2lkdGg9IjQiIGZpbGw9Im5vbmUiIG9wYWNpdHk9Ii42Ii8+PHBhdGggZD0iTTM2MiwyNzcgUTM5Ni4yLDMxNi4wIDM4MC4wLDM1NSIgc3Ryb2tlPSIjZmZkNTRhIiBzdHJva2Utd2lkdGg9IjQiIGZpbGw9Im5vbmUiIG9wYWNpdHk9Ii42Ii8+PHJlY3QgeD0iMzQ1LjgiIHk9IjM1NSIgd2lkdGg9IjMyLjQiIGhlaWdodD0iMTQiIGZpbGw9IiNmNWU2YzgiLz48cGF0aCBkPSJNMzYyLDI1MSBWMjc3IiBzdHJva2U9IiNmMmI3MDUiIHN0cm9rZS13aWR0aD0iNSIvPjxjaXJjbGUgY3g9IjM2MiIgY3k9IjI0NyIgcj0iNyIgZmlsbD0iI2YyYjcwNSIvPgo8cGF0aCBkPSJNMTcwLDM1NSBDMTU2LjUsMzI2LjIgMTk0LjAsMzE1LjMyIDIwMCwyOTEgQzIwNi4wLDMxNS4zMiAyNDMuNSwzMjYuMiAyMzAsMzU1IFoiIGZpbGw9IiNlNjM5NDYiLz48cGF0aCBkPSJNMjAwLDI5MSBMMjAwLDM1NSIgc3Ryb2tlPSIjZmZkNTRhIiBzdHJva2Utd2lkdGg9IjUiIG9wYWNpdHk9Ii43NSIvPjxwYXRoIGQ9Ik0yMDAsMjkxIFExNzEuNSwzMjMuMCAxODUuMCwzNTUiIHN0cm9rZT0iI2ZmZDU0YSIgc3Ryb2tlLXdpZHRoPSI0IiBmaWxsPSJub25lIiBvcGFjaXR5PSIuNiIvPjxwYXRoIGQ9Ik0yMDAsMjkxIFEyMjguNSwzMjMuMCAyMTUuMCwzNTUiIHN0cm9rZT0iI2ZmZDU0YSIgc3Ryb2tlLXdpZHRoPSI0IiBmaWxsPSJub25lIiBvcGFjaXR5PSIuNiIvPjxyZWN0IHg9IjE4Ni41IiB5PSIzNTUiIHdpZHRoPSIyNy4wIiBoZWlnaHQ9IjE0IiBmaWxsPSIjZjVlNmM4Ii8+PHBhdGggZD0iTTIwMCwyNjUgVjI5MSIgc3Ryb2tlPSIjZjJiNzA1IiBzdHJva2Utd2lkdGg9IjUiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIyNjEiIHI9IjciIGZpbGw9IiNmMmI3MDUiLz4KPHBhdGggZD0iTTI4MiwzNTUgQzI2OC41LDMyNi4yIDMwNi4wLDMxNS4zMiAzMTIsMjkxIEMzMTguMCwzMTUuMzIgMzU1LjUsMzI2LjIgMzQyLDM1NSBaIiBmaWxsPSIjZjQ3YzIwIi8+PHBhdGggZD0iTTMxMiwyOTEgTDMxMiwzNTUiIHN0cm9rZT0iIzdhMGMxZSIgc3Ryb2tlLXdpZHRoPSI1IiBvcGFjaXR5PSIuNzUiLz48cGF0aCBkPSJNMzEyLDI5MSBRMjgzLjUsMzIzLjAgMjk3LjAsMzU1IiBzdHJva2U9IiM3YTBjMWUiIHN0cm9rZS13aWR0aD0iNCIgZmlsbD0ibm9uZSIgb3BhY2l0eT0iLjYiLz48cGF0aCBkPSJNMzEyLDI5MSBRMzQwLjUsMzIzLjAgMzI3LjAsMzU1IiBzdHJva2U9IiM3YTBjMWUiIHN0cm9rZS13aWR0aD0iNCIgZmlsbD0ibm9uZSIgb3BhY2l0eT0iLjYiLz48cmVjdCB4PSIyOTguNSIgeT0iMzU1IiB3aWR0aD0iMjcuMCIgaGVpZ2h0PSIxNCIgZmlsbD0iI2Y1ZTZjOCIvPjxwYXRoIGQ9Ik0zMTIsMjY1IFYyOTEiIHN0cm9rZT0iI2YyYjcwNSIgc3Ryb2tlLXdpZHRoPSI1Ii8+PGNpcmNsZSBjeD0iMzEyIiBjeT0iMjYxIiByPSI3IiBmaWxsPSIjZjJiNzA1Ii8+Cjwvc3ZnPg==";
+const VERSION="20261116-01";
+const CITY={he:"מוסקבה, רוסיה",ll:[55.7558,37.6173],tz:"Europe/Moscow",cur:"RUB"};
+// closed: ימי סגירה (0=ראשון ... 6=שבת). indoor: מקום סגור. הנתונים נבדקו נכון ל-16/11/2026 - ייתכנו שינויים, מומלץ לאמת באתר הרשמי.
+const SITES=[
+{id:"s_red",cat:"היסטוריה",he:"הכיכר האדומה",en:"Red Square",ru:"Красная площадь",wiki:"Red_Square",ll:[55.7539,37.6208],zone:"מרכז",dur:60,indoor:false,
+ s:"הכיכר המפורסמת ביותר ברוסיה: קרמלין, קתדרלת בזיליוס הקדוש, גום ומאוזוליאום לנין.",
+ h:"הכיכר נוצרה בסוף המאה ה-15 כשוק ליד חומות הקרמלין. השם 'אדומה' מגיע מהמילה העתיקה 'יפה'. כאן נערכו מצעדי הניצחון, וכיום היא ליבה הסמלי של העיר. בחורף מוקמים בה ירידי חג וחלקת קרח. לעיתים הכיכר נסגרת זמנית לאירועי ממשל.",
+ addr:"Красная площадь, Москва",ph:"",web:"https://www.gum.ru",hrs:"פתוחה תמיד (לעיתים נסגרת זמנית)",price:"חינם",free:"חינם כל יום",tix:"לא נדרש",go:"מטרו: Okhotny Ryad / Teatralnaya / Ploshchad Revolyutsii (קו 1/2/3), 5 דקות הליכה."},
+{id:"s_kremlin",cat:"היסטוריה",he:"הקרמלין – כיכר הקתדרלות",en:"Moscow Kremlin (Cathedral Square)",ru:"Московский Кремль",wiki:"Moscow_Kremlin",ll:[55.7520,37.6175],zone:"מרכז",dur:180,indoor:false,closed:[4],
+ s:"מבצר היסטורי בלב העיר, עם קתדרלות מוזהבות, ארמונות ואוצרות.",
+ h:"המבצר הוקם במאות ה-12–15 ומשמש מושב השלטון הרוסי. בתוכו קתדרלות ההשתדלות, ההכרזה והמלאך הראשי בהן הוכתרו וקבורים הצארים. הכניסה לשטח היא דרך מגדל קוטפיה. הקרמלין סגור בימי חמישי, ולעיתים נסגר גם לאירועי ממשל (למשל ב-28/10 הוא היה סגור).",
+ addr:"Кремль, Москва (כניסה: מגדל Kutafya)",ph:"",web:"https://kreml.ru/en",hrs:"10:00–17:00 (חורף 1.10–14.5, קופות 9:30–16:30). סגור בימי חמישי.",price:"כרטיס מלא לכיכר הקתדרלות ≈900 ₽",free:"ילדים עד גיל 7 – חינם; הנחות עד גיל 16 (לפי האתר הרשמי)",tix:"קופות ליד גן אלכסנדר + רכישה מראש באתר kreml.ru. מומלץ מאוד לקנות מראש ולהחליף שוברים בקופה 45 דקות לפני.",go:"מטרו: Aleksandrovsky Sad / Borovitskaya / Biblioteka imeni Lenina."},
+{id:"s_armoury",cat:"מוזיאון",he:"חדר הנשק והקרמלין (Armoury)",en:"Kremlin Armoury Chamber",ru:"Оружейная палата",wiki:"Kremlin_Armoury",ll:[55.7494,37.6139],zone:"מרכז",dur:90,indoor:true,closed:[4],
+ s:"אוצרות הצארים: כתרים, כרכרות, ביצי פברז'ה ושמלות הכתרה.",
+ h:"המוזיאון המקורי נוסד ב-1508 כמחסן כלי הנשק של הצארים ובהמשך נוספו אוצרות המלוכה והמתנות הדיפלומטיות. כניסה בשעות קבועות בלבד – 10:00, 12:00, 14:30 ו-16:30. בנפרד אפשר לבקר בקרן היהלומים (Diamond Fund).",
+ addr:"Кремль, Москва (כניסה דרך מגדל Borovitskaya)",ph:"",web:"https://kreml.ru/en",hrs:"10:00–18:00 בכניסות מתוזמנות. סגור בימי חמישי.",price:"כרטיס מלא ≈1,200 ₽ (לפי האתר הרשמי)",free:"ילדים עד 7 חינם",tix:"מומלץ להזמין מראש באתר kreml.ru – מקומות מוגבלים לכל שעה.",go:"מטרו Borovitskaya (קו 9) או Biblioteka imeni Lenina."},
+{id:"s_basil",cat:"היסטוריה",he:"קתדרלת בזיליוס הקדוש",en:"Saint Basil's Cathedral",ru:"Собор Василия Блаженного",wiki:"Saint_Basil's_Cathedral",ll:[55.7525,37.6231],zone:"מרכז",dur:60,indoor:true,
+ s:"סמל העיר – כיפות צבעוניות כקישוט סוכריות.",
+ h:"נבנתה בשנים 1555–1561 בפקודת איוון האיום לזכר כיבוש קאזאן. הכנסייה מורכבת מכמה כנסיות קטנות סביב מרכזית אחת. הפנים מרשימים בציורי קיר ובמבוכים צרים. פועלת כמוזיאון (סניף של המוזיאון ההיסטורי).",
+ addr:"Красная площадь, 7",ph:"",web:"https://shm.ru",hrs:"בדרך כלל יומי, בערך 11:00–18:00 (בדקו באתר)",price:"בערך 700–1,000 ₽ (בדקו)",free:"הנחות לילדים/סטודנטים",tix:"קופות במקום + אתר המוזיאון ההיסטורי",go:"ביציאה הדרומית של הכיכר האדומה; מטרו Kitay-gorod / Ploshchad Revolyutsii."},
+{id:"s_bolshoi",cat:"תרבות",he:"תיאטרון הבולשוי",en:"Bolshoi Theatre",ru:"Большой театр",wiki:"Bolshoi_Theatre",ll:[55.7601,37.6186],zone:"מרכז",dur:180,indoor:true,
+ s:"בית האופרה והבלט המפורסם בעולם. מומלץ מאוד להזמין מראש.",
+ h:"נוסד ב-1776; הבניין הנוכחי נחנך ב-1856 ושופץ יסודית עד 2011. כאן הוצגו לראשונה 'אגם הברבורים' ויצירות צ'ייקובסקי. כרטיסי 'מפצח האגוזים' בחגים אזלים כבר באוקטובר.",
+ addr:"Театральная пл., 1",ph:"+7 495 455-55-55",web:"https://bolshoi.ru",hrs:"הצגות בערב; קופה בשעות היום",price:"≈1,500 ₽ ועד עשרות אלפי ₽ לפי מקום",free:"לא",tix:"רק דרך האתר הרשמי/קופה – היזהרו ממתווכים.",go:"מטרו Teatralnaya / Okhotny Ryad."},
+{id:"s_zaryadye",cat:"טבע ופארקים",he:"פארק זאריאדיה והגשר המרחף",en:"Zaryadye Park",ru:"Парк «Зарядье»",wiki:"Zaryadye_Park",ll:[55.7513,37.6288],zone:"מרכז",dur:90,indoor:false,
+ s:"פארק מודרני ליד הקרמלין עם גשר מעל הנהר ותצפית על הקרמלין.",
+ h:"נפתח ב-2017 במקום מלון רוסיה שנהרס. מדמה את נופי רוסיה: טונדרה, סטפה, יער וביצה. הגשר 'המרחף' בולט מעל נהר מוסקבה.",
+ addr:"ул. Варварка, 6, стр. 1",ph:"",web:"https://www.zaryadyepark.ru",hrs:"בדרך כלל יומי (בדקו שעות חורף)",price:"כניסה חינם",free:"חינם",tix:"לא נדרש לפארק",go:"מטרו Kitay-gorod."},
+{id:"s_tret",cat:"מוזיאון",he:"גלריית טרטיאקוב",en:"State Tretyakov Gallery",ru:"Третьяковская галерея",wiki:"Tretyakov_Gallery",ll:[55.7415,37.6208],zone:"דרום המרכז",dur:150,indoor:true,closed:[1],
+ s:"אוסף האמנות הרוסית הגדול בעולם.",
+ h:"נוסדה ב-1856 על ידי הסוחר פאבל טרטיאקוב. מציגה איקונות ('השילוש' של רובליוב) ויצירות רפין, ורובל ושישקין. בשכנות – 'גלריית טרטיאקוב החדשה' בקרים ואל.",
+ addr:"Лаврушинский пер., 10",ph:"",web:"https://www.tretyakovgallery.ru",hrs:"בדרך כלל ג'–א' 10:00–18:00 (בחלק מהימים עד ערב). סגור בימי שני.",price:"בערך 600–900 ₽ (בדקו)",free:"בדקו ימי כניסה חופשית באתר",tix:"רכישה מראש באתר",go:"מטרו Tretyakovskaya (קו 6/8)."},
+{id:"s_pushkin",cat:"מוזיאון",he:"מוזיאון פושקין לאמנויות",en:"Pushkin State Museum of Fine Arts",ru:"ГМИИ им. Пушкина",wiki:"Pushkin_Museum",ll:[55.7474,37.6050],zone:"מרכז",dur:120,indoor:true,closed:[1],
+ s:"אמנות אירופית: אימפרסיוניסטים, התקופה העתיקה ומצרים.",
+ h:"נוסד ב-1912 כמוזיאון להעתקים; כיום אוסף אמנות אירופית רחב.",
+ addr:"ул. Волхонка, 12",ph:"",web:"https://pushkinmuseum.art",hrs:"בדרך כלל ג'–א' (בדקו). סגור בימי שני.",price:"בערך 500–800 ₽ (בדקו)",free:"בדקו ימי הנחה",tix:"באתר/קופה",go:"מטרו Kropotkinskaya (קו 1)."},
+{id:"s_christ",cat:"דת וארכיטקטורה",he:"קתדרלת ישו המושיע",en:"Cathedral of Christ the Saviour",ru:"Храм Христа Спасителя",wiki:"Cathedral_of_Christ_the_Saviour",ll:[55.7447,37.6055],zone:"מרכז",dur:60,indoor:true,
+ s:"הקתדרלה האורתודוקסית הגדולה, כיפה מוזהבת על הנהר.",
+ h:"נבנתה במאה ה-19 לזכר הניצחון על נפוליאון, נהרסה ב-1931 והוקמה מחדש בשנות ה-90. הכניסה חינם; יש צורך בלבוש צנוע.",
+ addr:"ул. Волхонка, 15",ph:"",web:"https://xxc.ru",hrs:"יומי בשעות היום (בדקו)",price:"חינם (תצפית/מוזיאון בתשלום)",free:"חינם",tix:"לא נדרש",go:"מטרו Kropotkinskaya."},
+{id:"s_vdnh",cat:"טבע ופארקים",he:"VDNKh – תערוכת ההישגים",en:"VDNKh",ru:"ВДНХ",wiki:"VDNKh",ll:[55.8268,37.6372],zone:"צפון",dur:180,indoor:false,
+ s:"פארק תערוכות סובייטי עצום עם מזרקות ופסל 'הפועל והקולחוזנית'.",
+ h:"נפתח ב-1939. בחורף מופעל בו מגלשת קרח גדולה (בדקו תאריכים). בסמוך: מוזיאון החלל.",
+ addr:"проспект Мира, 119",ph:"",web:"https://vdnh.ru",hrs:"פארק פתוח כל היום",price:"כניסה לפארק חינם",free:"חינם",tix:"מוזיאונים ופעילויות – תשלום נפרד",go:"מטרו VDNKh (קו 6)."},
+{id:"s_ostank",cat:"תצפיות",he:"מגדל אוסטנקינו",en:"Ostankino Tower",ru:"Останкинская телебашня",wiki:"Ostankino_Tower",ll:[55.8197,37.6117],zone:"צפון",dur:120,indoor:true,
+ s:"מגדל הטלוויזיה בגובה 540 מ' עם תצפית.",
+ h:"נבנה ב-1967. כניסה לסיור רק עם כרטיס מראש ובשעה קבועה.",
+ addr:"ул. Академика Королёва, 15",ph:"",web:"https://tvtower.ru",hrs:"בשעות מתוזמנות",price:"בדקו באתר",free:"לא",tix:"חובה להזמין מראש באתר",go:"מטרו VDNKh + הליכה / טראם."},
+{id:"s_city",cat:"תצפיות",he:"מוסקבה סיטי (מרכז עסקים)",en:"Moscow City",ru:"Москва-Сити",wiki:"Moscow_International_Business_Center",ll:[55.7494,37.5395],zone:"מערב",dur:120,indoor:true,
+ s:"קו רקיע של גורדי שחקים עם תצפיות וקניון.",
+ h:"פרויקט מגדלים שהחל ב-1990s; מגדל הפדרציה והאוולוציה עם תצפית פנורמית.",
+ addr:"Пресненская наб., 12",ph:"",web:"https://www.afimall.ru",hrs:"קניון: ~10:00–22:00",price:"תצפית – לפי כרטיס (בדקו)",free:"הליכה בסביבה חינם",tix:"באתרי המגדלים",go:"מטרו Delovoy Tsentr / Vystavochnaya."},
+{id:"s_sparrow",cat:"תצפיות",he:"גבעות הדרורים וגן האוניברסיטה",en:"Sparrow Hills",ru:"Воробьёвы горы",wiki:"Sparrow_Hills",ll:[55.7102,37.5535],zone:"דרום מערב",dur:60,indoor:false,
+ s:"תצפית יפה על העיר ועל אצטדיון לוז'ניקי.",
+ h:"גבעה מעל נהר מוסקבה, ליד אוניברסיטת לומונוסוב (אחת משבע האחיות).",
+ addr:"Воробьёвская наб.",ph:"",web:"",hrs:"פתוח תמיד",price:"חינם",free:"חינם",tix:"לא",go:"מטרו Vorobyovy Gory (קו 1)."},
+{id:"s_gorky",cat:"טבע ופארקים",he:"פארק גורקי",en:"Gorky Park",ru:"Парк Горького",wiki:"Gorky_Park_(Moscow)",ll:[55.7312,37.6011],zone:"דרום המרכז",dur:120,indoor:false,
+ s:"פארק עירוני אהוב, בחורף חלקת החלקה על הקרח.",
+ h:"נפתח ב-1928. כולל פארק פסלים 'מוזיאון' וגלריית גראז'.",
+ addr:"ул. Крымский Вал, 9",ph:"",web:"https://park-gorkogo.com",hrs:"פתוח כל היום",price:"חינם (פעילויות – בתשלום)",free:"חינם",tix:"לא",go:"מטרו Park Kultury / Oktyabrskaya."},
+{id:"s_arbat",cat:"רחובות ושכונות",he:"רחוב ארבאט הישן",en:"Old Arbat Street",ru:"Старый Арбат",wiki:"Arbat_Street",ll:[55.7494,37.5923],zone:"מרכז",dur:60,indoor:false,
+ s:"רחוב הולכי רגל עם אמני רחוב וחנויות מזכרות.",
+ h:"אחד הרחובות הוותיקים; נקשר לפושקין ולמשוררים. מומלץ להתחשב במחירי מזכרות.",
+ addr:"ул. Арбат",ph:"",web:"",hrs:"כל היום",price:"חינם",free:"חינם",tix:"לא",go:"מטרו Arbatskaya / Smolenskaya."},
+{id:"s_novod",cat:"דת וארכיטקטורה",he:"מנזר נובודביצ'י",en:"Novodevichy Convent",ru:"Новодевичий монастырь",wiki:"Novodevichy_Convent",ll:[55.7258,37.5558],zone:"דרום מערב",dur:120,indoor:false,
+ s:"מנזר מהמאה ה-16 לצד בית קברות מפורסם.",
+ h:"אתר אונסק\"ו. בבית הקברות הסמוך קבורים צ'כוב, גוגול, חרושצ'וב ואחרים.",
+ addr:"Новодевичий пр., 1",ph:"",web:"https://novodev.ru",hrs:"בדקו שעות (חורף קצר)",price:"בדקו",free:"הטריטוריה לעיתים חינם",tix:"קופות במקום",go:"מטרו Sportivnaya (קו 1)."},
+{id:"s_kolom",cat:"היסטוריה",he:"קולומנסקויה",en:"Kolomenskoye",ru:"Коломенское",wiki:"Kolomenskoye",ll:[55.6677,37.6718],zone:"דרום",dur:150,indoor:false,
+ s:"אחוזה קיסרית עם כנסיית העלייה (אונסק\"ו).",
+ h:"כנסיית העלייה מ-1532 היא דוגמה לארכיטקטורה רוסית מעץ-אבן. נוף יפה לנהר.",
+ addr:"просп. Андропова, 39",ph:"",web:"https://mgomz.ru",hrs:"פארק פתוח כל היום",price:"חינם (מוזיאונים בתשלום)",free:"חינם",tix:"באתר",go:"מטרו Kolomenskaya."},
+{id:"s_tsaritsyno",cat:"היסטוריה",he:"צאריצינו",en:"Tsaritsyno Palace",ru:"Царицыно",wiki:"Tsaritsyno_Museum-Reserve",ll:[55.6150,37.6860],zone:"דרום",dur:150,indoor:false,
+ s:"ארמון ופארק בסגנון גותי-רוסי מימי יקטרינה.",
+ h:"נבנה במאה ה-18 אך לא הושלם; שוחזר ב-2000s.",
+ addr:"ул. Дольская, 1",ph:"",web:"https://tsaritsyno-museum.ru",hrs:"פארק יומי; ארמונות לפי לוח",price:"בדקו",free:"הפארק חינם",tix:"באתר",go:"מטרו Tsaritsyno."},
+{id:"s_hist",cat:"מוזיאון",he:"המוזיאון ההיסטורי הממלכתי",en:"State Historical Museum",ru:"Государственный исторический музей",wiki:"State_Historical_Museum",ll:[55.7553,37.6177],zone:"מרכז",dur:120,indoor:true,
+ s:"אוסף היסטורי גדול ליד הכיכר האדומה.",
+ h:"נפתח ב-1883. בדקו יום סגור אקטואלי.",
+ addr:"Красная пл., 1",ph:"",web:"https://shm.ru",hrs:"בדקו באתר",price:"בדקו",free:"בדקו",tix:"באתר",go:"מטרו Okhotny Ryad."},
+{id:"s_cosmos",cat:"מוזיאון",he:"מוזיאון החלל",en:"Memorial Museum of Cosmonautics",ru:"Музей космонавтики",wiki:"Memorial_Museum_of_Cosmonautics",ll:[55.8232,37.6387],zone:"צפון",dur:100,indoor:true,closed:[1],
+ s:"היסטוריית החלל הסובייטית והרוסית מתחת לאנדרטה.",
+ h:"נפתח ב-1981 בבסיס אנדרטת 'כובשי החלל'.",
+ addr:"просп. Мира, 111",ph:"",web:"https://kosmo-museum.ru",hrs:"בדרך כלל ג'–א' (בדקו)",price:"בדקו",free:"בדקו",tix:"באתר",go:"מטרו VDNKh."},
+{id:"s_victory",cat:"היסטוריה",he:"פארק הניצחון והמוזיאון",en:"Victory Park & WWII Museum",ru:"Парк Победы",wiki:"Central_Museum_of_the_Great_Patriotic_War",ll:[55.7305,37.5075],zone:"מערב",dur:120,indoor:true,closed:[1],
+ s:"מוזיאון מלחמת העולם השנייה (המלחמה הפטריוטית הגדולה).",
+ h:"נחנך ב-1995. באתר קיימת גם אנדרטה ופארק.",
+ addr:"ул. Братьев Фонченко, 7",ph:"",web:"https://victorymuseum.ru",hrs:"בדקו",price:"בדקו",free:"בדקו",tix:"באתר",go:"מטרו Park Pobedy."},
+{id:"s_seven",cat:"דת וארכיטקטורה",he:"שבע האחיות הסטליניסטיות (מלון אוקראינה)",en:"Seven Sisters",ru:"Сталинские высотки",wiki:"Seven_Sisters_(Moscow)",ll:[55.7515,37.5656],zone:"מערב",dur:30,indoor:false,
+ s:"שבעה גורדי שחקים מימי סטלין; הנגישים: מלון אוקראינה.",
+ h:"נבנו בשנות ה-40–50 ומעטרים את קו הרקיע.",
+ addr:"Кутузовский пр., 2/1",ph:"+7 495 221-55-55",web:"https://www.ukraina-hotel.ru",hrs:"חיצוני תמיד",price:"חינם",free:"חינם",tix:"לא",go:"מטרו Kievskaya."},
+{id:"s_sand",cat:"חוויות",he:"מרחצאות סנדונובסקי",en:"Sanduny Baths",ru:"Сандуновские бани",wiki:"Sandunovskiye_Baths",ll:[55.7630,37.6224],zone:"מרכז",dur:150,indoor:true,
+ s:"בית מרחץ היסטורי – חוויה חורפית רוסית.",
+ h:"נוסד ב-1808. פינוק מצוין לאחר יום קר.",
+ addr:"Неглинная ул., 14",ph:"",web:"https://sanduny.ru",hrs:"בדקו",price:"בדקו",free:"לא",tix:"מראש",go:"מטרו Kuznetsky Most."},
+{id:"s_syn",cat:"יהדות",he:"בית הכנסת המרכזי של מוסקבה",en:"Moscow Choral Synagogue",ru:"Московская хоральная синагога",wiki:"Moscow_Choral_Synagogue",ll:[55.7562,37.6372],zone:"מרכז",dur:30,indoor:true,
+ s:"בית הכנסת ההיסטורי ליד קיטאי-גורוד.",
+ h:"הוקם ב-1891. קהילה פעילה.",
+ addr:"Большой Спасоглинищевский пер., 10",ph:"",web:"",hrs:"בדקו",price:"חינם",free:"חינם",tix:"לא",go:"מטרו Kitay-gorod."},
+{id:"s_jmus",cat:"יהדות",he:"המוזיאון היהודי ומרכז הסובלנות",en:"Jewish Museum and Tolerance Center",ru:"Еврейский музей и центр толерантности",wiki:"Jewish_Museum_and_Tolerance_Center",ll:[55.7938,37.6015],zone:"צפון",dur:120,indoor:true,closed:[6],
+ s:"מוזיאון אינטראקטיבי להיסטוריה יהודית ברוסיה.",
+ h:"נפתח ב-2012 במבנה גראז' אוטובוסים היסטורי שעוצב מחדש.",
+ addr:"ул. Образцова, 11, стр. 1А",ph:"",web:"https://www.jewish-museum.ru",hrs:"בדקו (שבת – לרוב סגור)",price:"בדקו",free:"בדקו",tix:"באתר",go:"מטרו Novoslobodskaya / Mendeleevskaya."},
+{id:"s_ponds",cat:"רחובות ושכונות",he:"ברכות הפטריארך",en:"Patriarch's Ponds",ru:"Патриаршие пруды",wiki:"Patriarch's_Ponds",ll:[55.7642,37.5929],zone:"מרכז",dur:45,indoor:false,
+ s:"שכונה שקטה ומקום פתיחת 'האדון והמרגריטה' של בולגקוב.",
+ h:"בחורף הברכה משמשת למחליקים.",
+ addr:"Патриаршие пруды",ph:"",web:"",hrs:"תמיד",price:"חינם",free:"חינם",tix:"לא",go:"מטרו Mayakovskaya."},
+{id:"s_mausol",cat:"היסטוריה",he:"מאוזוליאום לנין",en:"Lenin's Mausoleum",ru:"Мавзолей Ленина",wiki:"Lenin's_Mausoleum",ll:[55.7536,37.6199],zone:"מרכז",dur:30,indoor:true,closed:[1,5],
+ s:"גופתו המחוסנת של לנין מוצגת לציבור.",
+ h:"נבנה ב-1930; לעיתים נסגר לתחזוקה.",
+ addr:"Красная пл.",ph:"",web:"",hrs:"בדרך כלל ג'–ה' ו-ש'–א' בבוקר (בדקו)",price:"חינם",free:"חינם",tix:"לא",go:"מטרו Okhotny Ryad."}
+];
+const HOTELS=[
+{id:"h_metropol",cat:"5★",he:"מלון מטרופול",en:"Metropol Hotel",ru:"Метрополь",wiki:"Hotel_Metropol_Moscow",ll:[55.7586,37.6212],stars:5,price:"≈35,000–80,000 ₽ ללילה כולל ארוחת בוקר (משוער)",zone:"מרכז",
+ s:"מלון ארט-נובו אגדי ליד הבולשוי והכיכר האדומה.",why:"מיקום מושלם, מבנה היסטורי ומסעדות מצוינות.",addr:"Театральный пр., 2",ph:"+7 495 501-78-00",web:"https://metropol-moscow.ru",go:"מטרו Teatralnaya – 3 דקות."},
+{id:"h_national",cat:"5★",he:"מלון נציונל",en:"Hotel National",ru:"Националь",wiki:"Hotel_National,_Moscow",ll:[55.7567,37.6147],stars:5,price:"≈30,000–70,000 ₽ ללילה (משוער)",zone:"מרכז",
+ s:"מלון היסטורי ממש מול הקרמלין.",why:"נוף לכיכר האדומה ומסורת מ-1903.",addr:"Моховая ул., 15/1",ph:"+7 495 258-70-00",web:"https://nationalhotel.ru",go:"מטרו Okhotny Ryad."},
+{id:"h_savoy",cat:"5★",he:"מלון סבוי",en:"Hotel Savoy",ru:"Савой",wiki:"Savoy_Hotel,_Moscow",ll:[55.7603,37.6255],stars:5,price:"≈25,000–50,000 ₽ (משוער)",zone:"מרכז",
+ s:"מלון בוטיק אלגנטי ליד לובינקה.",why:"אווירה אירופאית ושקט יחסי במרכז.",addr:"Рождественка ул., 3/6, стр. 1",ph:"+7 495 620-85-00",web:"https://savoy.ru",go:"מטרו Kuznetsky Most."},
+{id:"h_ukr",cat:"5★",he:"רדיסון קולקשן (מלון אוקראינה)",en:"Radisson Collection Hotel, Moscow",ru:"Украина",wiki:"Hotel_Ukraina",ll:[55.7515,37.5656],stars:5,price:"מחירים לדוגמה מ-24,000 ₽ כולל ארוחת בוקר (מבצע 2026, משוער)",zone:"מערב",
+ s:"בניין סטליניסטי ענק על הנהר.",why:"ארכיטקטורה מרשימה ותחבורה נוחה.",addr:"Кутузовский пр., 2/1",ph:"+7 495 221-55-55",web:"https://www.ukraina-hotel.ru",go:"מטרו Kievskaya."},
+{id:"h_lotte",cat:"5★",he:"לוטה הוטל מוסקבה",en:"Lotte Hotel Moscow",ru:"Лотте Отель Москва",wiki:"",ll:[55.7536,37.5879],stars:5,price:"≈25,000–55,000 ₽ (משוער)",zone:"מערב",
+ s:"מלון מודרני בכיוון נובי ארבאט.",why:"חדרים גדולים, ספא ובריכה.",addr:"Новинский бул., 8",ph:"+7 495 745-10-00",web:"https://www.lottehotel.com",go:"מטרו Smolenskaya (קו 4)."},
+{id:"h_baltschug",cat:"5★",he:"בלצ'וג",en:"Baltschug Hotel",ru:"Балчуг",wiki:"Baltschug_Kempinski_Moscow",ll:[55.7467,37.6296],stars:5,price:"≈25,000–55,000 ₽ (משוער)",zone:"דרום המרכז",
+ s:"מלון על גדת הנהר עם נוף לקרמלין.",why:"מבט פנורמי והליכה לכיכר האדומה.",addr:"Балчуг ул., 1",ph:"+7 495 287-20-00",web:"",go:"מטרו Novokuznetskaya / Tretyakovskaya."},
+{id:"h_slav",cat:"4★",he:"רדיסון סלבינסקאיה",en:"Radisson Slavyanskaya",ru:"Рэдиссон Славянская",wiki:"",ll:[55.7450,37.5660],stars:4,price:"≈9,000–18,000 ₽ (משוער)",zone:"מערב",
+ s:"מלון נוח ליד תחנת קייבסקי והאירוקספרס.",why:"גישה מצוינת לתחבורה, מחירים נוחים יותר.",addr:"Площадь Европы, 2",ph:"",web:"https://www.radissonhotels.com",go:"מטרו Kievskaya."},
+{id:"h_olym",cat:"4★",he:"רדיסון בלו אולימפיסקי",en:"Radisson Blu Olympiyskiy",ru:"Рэдиссон Блу Олимпийский",wiki:"",ll:[55.7826,37.6246],stars:4,price:"≈8,000–16,000 ₽ (משוער)",zone:"צפון",
+ s:"מלון עסקי ליד תחנות מטרו.",why:"חדרים חדשים ויחס מחיר/איכות.",addr:"Олимпийский пр-т, 18/1",ph:"",web:"https://www.radissonhotels.com",go:"מטרו Prospekt Mira."}
+];
+const RESTS=[
+{id:"r_pushkin",cat:"רוסי יוקרתי",he:"קפה פושקין",en:"Café Pushkin",ru:"Кафе Пушкинъ",wiki:"Café_Pushkin",ll:[55.7650,37.6049],price:"≈3,500–7,000 ₽ לאדם (משוער)",s:"מסעדה אגדית בבית אצולה, פתוחה 24 שעות.",addr:"Тверской б-р, 26А",ph:"+7 495 739-00-33",web:"https://cafe-pushkin.ru",book:"מומלץ להזמין מראש בערבים"},
+{id:"r_57",cat:"אוכל סובייטי",he:"סטולובאיה מס' 57",en:"Stolovaya No. 57",ru:"Столовая №57",wiki:"",ll:[55.7547,37.6215],price:"≈600–1,200 ₽",s:"מזנון סובייטי בקומה 3 של גום – מנות מסורתיות במחיר נוח.",addr:"Красная пл., 3 (גום, קומה 3)",ph:"",web:"https://gum.ru",book:"לא נדרש"},
+{id:"r_wr",cat:"רוסי מודרני",he:"ארנב לבן",en:"White Rabbit",ru:"Белый кролик",wiki:"",ll:[55.7478,37.5824],price:"≈8,000+ ₽ לאדם",s:"מסעדת שף עם נוף פנורמי בקומה 16.",addr:"Смоленская пл., 3, Смоленский пассаж",ph:"+7 495 777-03-67",web:"",book:"חובה להזמין מראש"},
+{id:"r_tur",cat:"אסייתי",he:"טורנדוט",en:"Turandot",ru:"Турандот",wiki:"",ll:[55.7641,37.6028],price:"≈5,000–9,000 ₽",s:"מסעדה אסייתית בעיצוב ארמון.",addr:"Тверской б-р, 26/5",ph:"+7 495 739-00-11",web:"",book:"מומלץ"},
+{id:"r_zhiv",cat:"רוסי יוקרתי",he:"דוקטור ז'יבגו",en:"Dr. Zhivago",ru:"Доктор Живаго",wiki:"",ll:[55.7567,37.6147],price:"≈4,000–8,000 ₽",s:"מסעדה במלון נציונל עם נוף לקרמלין.",addr:"Моховая ул., 15/1",ph:"",web:"",book:"מומלץ"},
+{id:"r_mari",cat:"רוסי נוסטלגי",he:"מרי וואנה",en:"Mari Vanna",ru:"Мари Ванна",wiki:"",ll:[55.7618,37.5948],price:"≈3,000–5,500 ₽",s:"אווירת סבתא רוסית: פלמני, בורשט, פשטידות.",addr:"Спиридоньевский пер., 10А",ph:"",web:"",book:"מומלץ"},
+{id:"r_uzb",cat:"אוזבקי",he:"אוזבקיסטן",en:"Uzbekistan",ru:"Узбекистан",wiki:"",ll:[55.7656,37.6193],price:"≈2,500–4,500 ₽",s:"מסעדה אוזבקית ותיקה: פלוב, שישליק, אפיות.",addr:"Неглинная ул., 29/14",ph:"",web:"",book:"מומלץ"},
+{id:"r_teremok",cat:"מהיר וזול",he:"טרמוק (בליני)",en:"Teremok",ru:"Теремок",wiki:"Teremok_(restaurant_chain)",ll:[55.7580,37.6180],price:"≈300–700 ₽",s:"רשת בליני מהירה בכל העיר.",addr:"סניפים רבים",ph:"",web:"https://teremok.ru",book:"לא נדרש"}
+];
+const FOODS=[
+{id:"f_borscht",he:"בורשט",en:"Borscht",ru:"Борщ",wiki:"Borscht",ing:"סלק, כרוב, גזר, תפוחי אדמה, בצל, עגבניות, בשר/ציר, שמנת חמוצה",s:"מרק סלק אדום – מנה לאומית.",note:"לעיתים כולל בשר חזיר – שאלו."},
+{id:"f_pelmeni",he:"פלמני",en:"Pelmeni",ru:"Пельмени",wiki:"Pelmeni",ing:"בצק דק במילוי בשר טחון, בצל; מוגש עם שמנת וחמאה",s:"כיסונים מבושלים.",note:"הכי מקובל – בקר/חזיר."},
+{id:"f_blini",he:"בליני",en:"Blini",ru:"Блины",wiki:"Blini",ing:"עיסת קמח, חלב וביצים; מילויים: קוויאר, סלמון, גבינה, ריבה",s:"פנקייקים דקים.",note:""},
+{id:"f_stroganoff",he:"בף סטרוגנוף",en:"Beef Stroganoff",ru:"Бефстроганов",wiki:"Beef_Stroganoff",ing:"רצועות בקר, פטריות, שמנת חמוצה, בצל",s:"קלאסיקה רוסית.",note:""},
+{id:"f_olivier",he:"סלט אוליבייה",en:"Olivier salad",ru:"Салат Оливье",wiki:"Olivier_salad",ing:"תפו\"א, גזר, מלפפון חמוץ, ביצים, אפונה, נקניק/עוף, מיונז",s:"סלט החג המסורתי.",note:""},
+{id:"f_shchi",he:"שצ'י",en:"Shchi",ru:"Щи",wiki:"Shchi",ing:"כרוב, בשר, גזר ובצל",s:"מרק כרוב.",note:""},
+{id:"f_pirozhki",he:"פירושקי",en:"Pirozhki",ru:"Пирожки",wiki:"Pirozhki",ing:"בצק אפוי במילוי כרוב, בשר, תפוח אדמה או פירות",s:"בצק קטן – חטיף רחוב.",note:""},
+{id:"f_syrniki",he:"סירניקי",en:"Syrniki",ru:"Сырники",wiki:"Syrniki",ing:"גבינה לבנה, ביצה, קמח וסוכר; מוגש עם שמנת/ריבה",s:"לביבות גבינה מתוקות.",note:"מתאים לארוחת בוקר."},
+{id:"f_herring",he:"הרינג בפרווה",en:"Herring under a fur coat",ru:"Сельдь под шубой",wiki:"Dressed_herring",ing:"הרינג, סלק, גזר, תפו\"א, ביצה, מיונז",s:"סלט שכבות חגיגי.",note:""},
+{id:"f_kvass",he:"קוואס",en:"Kvass",ru:"Квас",wiki:"Kvass",ing:"לחם שיפון מותסס",s:"משקה מותסס קל.",note:"תכולת אלכוהול נמוכה."},
+{id:"f_medovik",he:"מדוביק (עוגת דבש)",en:"Medovik",ru:"Медовик",wiki:"Medovik",ing:"דבש, קמח, שמנת/קרם",s:"עוגת שכבות עם דבש.",note:""},
+{id:"f_kulebyaka",he:"קולביאקה",en:"Kulebyaka",ru:"Кулебяка",wiki:"Kulebyaka",ing:"בצק, דג/בשר, אורז וביצה",s:"פשטידה חגיגית.",note:""},
+{id:"f_khach",he:"חצ'אפורי (גאורגי)",en:"Khachapuri",ru:"Хачапури",wiki:"Khachapuri",ing:"בצק עם גבינה וביצה",s:"פופולרי מאוד גם במוסקבה.",note:""},
+{id:"f_plov",he:"פלוב (אוזבקי)",en:"Plov",ru:"Плов",wiki:"Pilaf",ing:"אורז, בשר, גזר, בצל ותבלינים",s:"מאכל מרכז-אסייתי נפוץ.",note:""}
+];
+const SHOPS=[
+{id:"p_gum",cat:"דרג עליון",he:"גום",en:"GUM",ru:"ГУМ",wiki:"GUM_(department_store)",ll:[55.7547,37.6215],s:"קניון היסטורי בכיכר האדומה.",addr:"Красная пл., 3",ph:"+7 495 788-43-43",web:"https://gum.ru",hrs:"10:00–22:00",go:"מטרו Okhotny Ryad / Ploshchad Revolyutsii."},
+{id:"p_tsum",cat:"דרג עליון",he:"צום",en:"TsUM",ru:"ЦУМ",wiki:"TsUM_(Moscow)",ll:[55.7600,37.6200],s:"חנות כלבו מפוארת.",addr:"Петровка ул., 2",ph:"",web:"https://tsum.ru",hrs:"10:00–22:00",go:"מטרו Teatralnaya."},
+{id:"p_okh",cat:"קניונים",he:"קניון אוחוטני ריאד",en:"Okhotny Ryad Mall",ru:"Охотный Ряд",wiki:"",ll:[55.7558,37.6152],s:"קניון תת-קרקעי ליד מנז'.",addr:"Манежная пл., 1, стр. 2",ph:"",web:"https://www.okhotny-ryad.ru",hrs:"10:00–22:00",go:"מטרו Okhotny Ryad."},
+{id:"p_europ",cat:"קניונים",he:"קניון אירופי",en:"Evropeisky",ru:"Европейский",wiki:"",ll:[55.7448,37.5667],s:"קניון גדול ליד תחנת קייבסקי.",addr:"пл. Киевского Вокзала, 2",ph:"",web:"https://www.europark.ru",hrs:"10:00–22:00",go:"מטרו Kievskaya."},
+{id:"p_afi",cat:"קניונים",he:"אפימול סיטי",en:"Afimall City",ru:"Афимолл Сити",wiki:"",ll:[55.7492,37.5395],s:"קניון במוסקבה סיטי.",addr:"Пресненская наб., 2",ph:"",web:"https://www.afimall.ru",hrs:"10:00–22:00",go:"מטרו Delovoy Tsentr."},
+{id:"p_aviap",cat:"קניונים",he:"אביפארק",en:"Aviapark",ru:"Авиапарк",wiki:"",ll:[55.7906,37.5322],s:"אחד הקניונים הגדולים באירופה.",addr:"Ходынский бул., 4",ph:"",web:"https://aviapark.com",hrs:"10:00–22:00",go:"מטרו CSKA / Polezhaevskaya."},
+{id:"p_dm",cat:"ילדים",he:"דצקי מיר",en:"Detsky Mir",ru:"Детский мир",wiki:"Detsky_Mir",ll:[55.7592,37.6256],s:"חנות צעצועים היסטורית.",addr:"Театральный пр., 5",ph:"",web:"https://www.detmir.ru",hrs:"10:00–22:00",go:"מטרו Lubyanka."},
+{id:"p_elis",cat:"מזון ומזכרות",he:"אליסייבסקי",en:"Eliseevsky Store",ru:"Елисеевский магазин",wiki:"Yeliseyev_Emporium",ll:[55.7650,37.6038],s:"דליקטסן אגדי בטברסקאיה.",addr:"Тверская ул., 14",ph:"",web:"",hrs:"בדקו",go:"מטרו Pushkinskaya."}
+];
+const MARKETS=[
+{id:"m_izm",cat:"מזכרות",he:"שוק ורניסאז' איזמאילובו",en:"Izmailovo Kremlin & Vernissage",ru:"Измайлово",wiki:"Izmailovsky_Market",ll:[55.7878,37.7470],s:"שוק מזכרות ענק וארמון קרמלין צעצוע.",addr:"Измайловское ш., 73Ж",hrs:"בעיקר סופי שבוע (בדקו)",go:"מטרו Partizanskaya."},
+{id:"m_dan",cat:"מזון",he:"שוק דניילובסקי",en:"Danilovsky Market",ru:"Даниловский рынок",wiki:"",ll:[55.7122,37.6232],s:"שוק מזון עם אוכל רחוב.",addr:"Мытная ул., 74",hrs:"בדקו",go:"מטרו Tulskaya."},
+{id:"m_dorog",cat:"מזון",he:"שוק דורוגומילובסקי",en:"Dorogomilovsky Market",ru:"Дорогомиловский рынок",wiki:"",ll:[55.7452,37.5604],s:"שוק קלאסי של ירקות ופירות.",addr:"Можайский Вал, 10",hrs:"בדקו",go:"מטרו Kievskaya."},
+{id:"m_riga",cat:"מזון",he:"שוק ריז'סקי",en:"Rizhsky Market",ru:"Рижский рынок",wiki:"",ll:[55.7919,37.6358],s:"שוק מזון ליד ריז'סקאיה.",addr:"пл. Рижского Вокзала, 1",hrs:"בדקו",go:"מטרו Rizhskaya."},
+{id:"m_xmas",cat:"עונתי",he:"ירידי חג המולד/השנה החדשה",en:"Journey to Christmas fairs",ru:"Путешествие в Рождество",wiki:"",ll:[55.7576,37.6155],s:"ירידים מקושטים בכיכר מנז'.",addr:"מנז'נאיה ופלושצ'אד רבולוציי",hrs:"במהדורה הקודמת: 12/12/2025–11/01/2026; תאריכי 2026/27 – בדקו",go:"מטרו Okhotny Ryad."}
+];
+const EVENTS=[
+{id:"e_bol",cat:"בלט ואופרה",he:"בולשוי – בלט ואופרה (עונת החורף)",s:"מפצח האגוזים ובלטים נוספים בחגים.",web:"https://bolshoi.ru",when:"נובמבר–ינואר",tix:"אתר רשמי",price:"≈1,500 ₽ ומעלה"},
+{id:"e_xmas",cat:"פסטיבל",he:"מסע לחג המולד",s:"ירידים והופעות בכל העיר.",web:"https://russpass.ru",when:"בדרך כלל דצמבר–ינואר (בדקו 2026/27)",tix:"רוב הפעילות חינם",price:"חלק בתשלום"},
+{id:"e_hockey",cat:"ספורט",he:"הוקי KHL (CSKA / ספרטק / דינמו)",s:"עונת ה-KHL נמשכת בחורף.",web:"https://www.khl.ru",when:"ספטמבר–אפריל",tix:"באתרי הקבוצות/כרטיסים",price:"בדקו"},
+{id:"e_kremlin",cat:"ילדים",he:"יולקה בקרמלין",s:"מופע חג לילדים בארמון הקרמלין.",web:"https://kremlinpalace.org",when:"דצמבר–ינואר",tix:"אתר רשמי",price:"בדקו"},
+{id:"e_conserv",cat:"קונצרטים",he:"קונסרבטוריון מוסקבה והיכל צ'ייקובסקי",s:"קונצרטים קלאסיים כל השנה.",web:"https://www.mosconsv.ru",when:"כל השנה",tix:"קופות/אתרים",price:"בדקו"},
+{id:"e_circus",cat:"ילדים",he:"קרקס ניקולין",s:"קרקס קבוע על שדרות צווטנוי.",web:"https://circusnikulin.ru",when:"כל השנה",tix:"אתר/קופה",price:"בדקו"}
+];
+const TICKET_SITES=[
+ {n:"קאסיר – Kassir.ru",u:"https://msk.kassir.ru"},
+ {n:"טיקטלנד – Ticketland.ru",u:"https://www.ticketland.ru"},
+ {n:"אפישה – Afisha.ru",u:"https://www.afisha.ru/msk/"}
+];
+const PHRASES=[
+["שלום","Здравствуйте","Zdravstvuyte"],["היי (לא רשמי)","Привет","Privet"],["תודה","Спасибо","Spasibo"],["בבקשה","Пожалуйста","Pozhaluysta"],
+["סליחה","Извините","Izvinite"],["כן","Да","Da"],["לא","Нет","Nyet"],["אני לא מבין","Я не понимаю","Ya ne ponimayu"],
+["אתם מדברים אנגלית?","Вы говорите по-английски?","Vy govorite po-angliyski?"],["איפה...?","Где...?","Gde...?"],
+["כמה זה עולה?","Сколько стоит?","Skolko stoit?"],["בואו נשלם","Счёт, пожалуйста","Schyot, pozhaluysta"],
+["מים","Вода","Voda"],["אני רוצה","Я хочу","Ya khochu"],["אני צמחוני","Я вегетарианец","Ya vegetarianets"],
+["איפה תחנת המטרו?","Где станция метро?","Gde stantsiya metro?"],["איפה השירותים?","Где туалет?","Gde tualet?"],
+["אני צריך עזרה","Мне нужна помощь","Mne nuzhna pomoshch"],["קראו למשטרה","Вызовите полицию","Vyzovite politsiyu"],
+["רופא","Врач","Vrach"],["בית מלון","Гостиница","Gostinitsa"],["בוקר טוב","Доброе утро","Dobroye utro"],
+["ערב טוב","Добрый вечер","Dobryy vecher"],["להתראות","До свидания","Do svidaniya"],["יש לכם תפריט באנגלית?","У вас есть меню на английском?","U vas yest menyu na angliyskom?"]
+];
+
+// מטרו: תחנות עיקריות בלבד (סכמטי). כל תחנה: "שם אנגלי|רוסית|עברית|קו|רוחב|אורך"
+const MLINES=[
+{n:1,c:"#D6083B",he:"סוקולניצ'סקאיה",ru:"Сокольническая",ends:"Bulvar Rokossovskogo ↔ Troparyovo",st:[
+"Bulvar Rokossovskogo|Бульвар Рокоссовского|בולוואר רוקוסובסקוגו|55.8148|37.7340","Cherkizovskaya|Черкизовская|צ'רקיזובסקאיה|55.8038|37.7447","Sokolniki|Сокольники|סוקולניקי|55.7892|37.6797","Krasnoselskaya|Красносельская|קרסנוסלסקאיה|55.7800|37.6667","Komsomolskaya|Комсомольская|קומסומולסקאיה|55.7757|37.6551","Krasniye Vorota|Красные Ворота|קרסנייה ורוטה|55.7685|37.6489","Chistye Prudy|Чистые пруды|צ'יסטיה פרודי|55.7650|37.6389","Lubyanka|Лубянка|לוביאנקה|55.7599|37.6272","Okhotny Ryad|Охотный Ряд|אוחוטני ריאד|55.7576|37.6150","Biblioteka imeni Lenina|Библиотека имени Ленина|ביבליוטקה אימני לנינה|55.7515|37.6101","Kropotkinskaya|Кропоткинская|קרופוטקינסקאיה|55.7452|37.6034","Park Kultury|Парк культуры|פארק קולטורי|55.7352|37.5948","Sportivnaya|Спортивная|ספורטיבנאיה|55.7222|37.5637","Vorobyovy Gory|Воробьёвы горы|ורובייבי גורי|55.7100|37.5584","Universitet|Университет|אוניברסיטט|55.6926|37.5343","Prospekt Vernadskogo|Проспект Вернадского|פרוספקט ורנדסקוגו|55.6768|37.5049","Yugo-Zapadnaya|Юго-Западная|יוגו-זפדנאיה|55.6637|37.4829","Troparyovo|Тропарёво|טרופריובו|55.6460|37.4730"]},
+{n:2,c:"#2DBE2C",he:"זמוסקבורצקאיה",ru:"Замоскворецкая",ends:"Khovrino ↔ Alma-Atinskaya",st:[
+"Khovrino|Ховрино|חובריינו|55.8770|37.4875","Rechnoy Vokzal|Речной вокзал|רצ'נוי וקזאל|55.8548|37.4764","Voykovskaya|Войковская|ווייקובסקאיה|55.8189|37.4979","Sokol|Сокол|סוקול|55.8056|37.5156","Aeroport|Аэропорт|איירופורט|55.8002|37.5307","Dinamo|Динамо|דינמו|55.7897|37.5581","Belorusskaya2|Белорусская|בלורוסקאיה|55.7774|37.5821","Mayakovskaya|Маяковская|מאיאקובסקאיה|55.7698|37.5963","Tverskaya|Тверская|טברסקאיה|55.7650|37.6049","Teatralnaya|Театральная|טיאטרלנאיה|55.7581|37.6194","Novokuznetskaya|Новокузнецкая|נובוקוזנצקאיה|55.7424|37.6290","Paveletskaya2|Павелецкая|פבלצקאיה|55.7295|37.6393","Avtozavodskaya|Автозаводская|אבטוזבודסקאיה|55.7078|37.6572","Kolomenskaya|Коломенская|קולומנסקאיה|55.6773|37.6633","Kashirskaya|Каширская|קשירסקאיה|55.6544|37.6484","Tsaritsyno|Царицыно|צאריצינו|55.6215|37.6692","Domodedovskaya|Домодедовская|דומודדובסקאיה|55.6107|37.7183","Alma-Atinskaya|Алма-Атинская|אלמה-אטינסקאיה|55.6334|37.7664"]},
+{n:3,c:"#0078BE",he:"ארבצקו-פוקרובסקאיה",ru:"Арбатско-Покровская",ends:"Pyatnitskoye Shosse ↔ Shchyolkovskaya",st:[
+"Pyatnitskoye Shosse|Пятницкое шоссе|פיאטניצקויה שוסה|55.8536|37.3553","Volokolamskaya|Волоколамская|וולוקולמסקאיה|55.8352|37.3827","Krylatskoye|Крылатское|קרילאטסקויה|55.7566|37.4080","Slavyansky Bulvar|Славянский бульвар|סלבינסקי בולוואר|55.7298|37.4709","Kievskaya3|Киевская|קייבסקאיה|55.7440|37.5648","Smolenskaya3|Смоленская|סמולנסקאיה|55.7476|37.5834","Arbatskaya3|Арбатская|ארבטסקאיה|55.7524|37.6014","Ploshchad Revolyutsii|Площадь Революции|פלושצ'אד רבולוציי|55.7568|37.6217","Kurskaya3|Курская|קורסקאיה|55.7580|37.6590","Baumanskaya|Бауманская|באומנסקאיה|55.7723|37.6787","Elektrozavodskaya|Электрозаводская|אלקטרוזבודסקאיה|55.7821|37.7035","Partizanskaya|Партизанская|פרטיזנסקאיה|55.7885|37.7490","Izmaylovskaya|Измайловская|איזמיילובסקאיה|55.7873|37.7798","Shchyolkovskaya|Щёлковская|שצ'ולקובסקאיה|55.8099|37.7987"]},
+{n:4,c:"#19C1F3",he:"פילבסקאיה",ru:"Филёвская",ends:"Aleksandrovsky Sad ↔ Kuntsevskaya",st:[
+"Aleksandrovsky Sad|Александровский сад|אלכסנדרובסקי סאד|55.7522|37.6089","Arbatskaya4|Арбатская|ארבטסקאיה (קו 4)|55.7519|37.6005","Smolenskaya4|Смоленская|סמולנסקאיה (קו 4)|55.7476|37.5836","Kievskaya4|Киевская|קייבסקאיה (קו 4)|55.7437|37.5645","Studencheskaya|Студенческая|סטודנצ'סקאיה|55.7388|37.5481","Kutuzovskaya|Кутузовская|קוטוזובסקאיה|55.7410|37.5340","Fili|Фили|פילי|55.7469|37.5148","Filyovsky Park|Филёвский парк|פילבסקי פארק|55.7397|37.4825","Pionerskaya|Пионерская|פיונרסקאיה|55.7357|37.4670","Kuntsevskaya|Кунцевская|קונצבסקאיה|55.7306|37.4466"]},
+{n:5,c:"#8D5B2D",he:"קולצבאיה (קו הטבעת)",ru:"Кольцевая",ends:"קו טבעת",st:[
+"Kurskaya5|Курская|קורסקאיה (קו 5)|55.7587|37.6591","Taganskaya5|Таганская|טגנסקאיה (קו 5)|55.7424|37.6531","Paveletskaya5|Павелецкая|פבלצקאיה (קו 5)|55.7295|37.6396","Dobryninskaya|Добрынинская|דוברינינסקאיה|55.7292|37.6227","Oktyabrskaya5|Октябрьская|אוקטיאברסקאיה (קו 5)|55.7292|37.6126","Park Kultury5|Парк культуры|פארק קולטורי (קו 5)|55.7355|37.5946","Kievskaya5|Киевская|קייבסקאיה (קו 5)|55.7440|37.5648","Krasnopresnenskaya|Краснопресненская|קרסנופרסננסקאיה|55.7603|37.5775","Belorusskaya5|Белорусская|בלורוסקאיה (קו 5)|55.7774|37.5821","Novoslobodskaya|Новослободская|נובוסלובודסקאיה|55.7797|37.6016","Prospekt Mira5|Проспект Мира|פרוספקט מירה (קו 5)|55.7814|37.6336","Komsomolskaya5|Комсомольская|קומסומולסקאיה (קו 5)|55.7757|37.6551"]},
+{n:6,c:"#ED9121",he:"קלוז'סקו-ריז'סקאיה",ru:"Калужско-Рижская",ends:"Medvedkovo ↔ Novoyasenevskaya",st:[
+"Medvedkovo|Медведково|מדבדקובו|55.8883|37.6615","Babushkinskaya|Бабушкинская|בבושקינסקאיה|55.8700|37.6645","VDNKh|ВДНХ|VDNKh|55.8216|37.6397","Rizhskaya|Рижская|ריז'סקאיה|55.7925|37.6360","Prospekt Mira6|Проспект Мира|פרוספקט מירה (קו 6)|55.7814|37.6336","Sukharevskaya|Сухаревская|סוחרבסקאיה|55.7722|37.6322","Turgenevskaya|Тургеневская|טורגנבסקאיה|55.7656|37.6370","Kitay-gorod6|Китай-город|קיטאי-גורוד (קו 6)|55.7569|37.6338","Tretyakovskaya6|Третьяковская|טרטיאקובסקאיה (קו 6)|55.7406|37.6254","Oktyabrskaya6|Октябрьская|אוקטיאברסקאיה (קו 6)|55.7292|37.6112","Shabolovskaya|Шаболовская|שבולובסקאיה|55.7190|37.6076","Leninsky Prospekt|Ленинский проспект|לנינסקי פרוספקט|55.7066|37.5855","Akademicheskaya|Академическая|אקדמיצ'סקאיה|55.6871|37.5732","Kaluzhskaya|Калужская|קלוז'סקאיה|55.6564|37.5400","Konkovo|Коньково|קונקובו|55.6320|37.5176","Teply Stan|Тёплый Стан|טפלי סטאן|55.6190|37.5059","Novoyasenevskaya|Новоясеневская|נובויאסנבסקאיה|55.6014|37.5539"]},
+{n:7,c:"#94278E",he:"טגנסקו-קרסנופרסננסקאיה",ru:"Таганско-Краснопресненская",ends:"Planernaya ↔ Kotelniki",st:[
+"Planernaya|Планерная|פלנרנאיה|55.8590|37.4366","Tushinskaya|Тушинская|טושינסקאיה|55.8258|37.4372","Shchukinskaya|Щукинская|שצ'וקינסקאיה|55.8096|37.4650","Polezhaevskaya|Полежаевская|פולז'ייבסקאיה|55.7770|37.5183","Begovaya|Беговая|בגובאיה|55.7737|37.5453","Ulitsa 1905 Goda|Улица 1905 года|אוליצה 1905 גודה|55.7650|37.5622","Barrikadnaya|Баррикадная|בריקדנאיה|55.7606|37.5812","Pushkinskaya|Пушкинская|פושקינסקאיה|55.7655|37.6040","Kuznetsky Most|Кузнецкий мост|קוזנצקי מוסט|55.7616|37.6239","Kitay-gorod7|Китай-город|קיטאי-גורוד (קו 7)|55.7556|37.6334","Taganskaya7|Таганская|טגנסקאיה (קו 7)|55.7425|37.6532","Proletarskaya|Пролетарская|פרולטרסקאיה|55.7313|37.6670","Volgogradsky Prospekt|Волгоградский проспект|וולגוגרדסקי פרוספקט|55.7253|37.6858","Tekstilshchiki|Текстильщики|טקסטילשצ'יקי|55.7098|37.7324","Kuzminki|Кузьминки|קוזמינקי|55.7058|37.7634","Vykhino|Выхино|ויחינו|55.7156|37.8176","Zhulebino|Жулебино|ז'ולבינו|55.6849|37.8550","Kotelniki|Котельники|קוטלניקי|55.6746|37.8587"]},
+{n:8,c:"#FFD702",he:"קלינינסקו-סולנצבסקאיה",ru:"Калининско-Солнцевская",ends:"Novokosino ↔ Rasskazovka",st:[
+"Novokosino|Новокосино|נובוקוסינו|55.7454|37.8640","Novogireevo|Новогиреево|נובוגירייבו|55.7517|37.8156","Perovo|Перово|פרובו|55.7507|37.7883","Aviamotornaya|Авиамоторная|אביאמוטורנאיה|55.7519|37.7165","Ploshchad Ilyicha|Площадь Ильича|פלושצ'אד איליצ'ה|55.7470|37.6808","Marksistskaya|Марксистская|מרקסיסטסקאיה|55.7410|37.6554","Tretyakovskaya8|Третьяковская|טרטיאקובסקאיה (קו 8)|55.7414|37.6258","Delovoy Tsentr|Деловой центр|דלובוי צנטר (מוסקבה סיטי)|55.7488|37.5392","Park Pobedy|Парк Победы|פארק פובדי|55.7360|37.5144","Minskaya|Минская|מינסקאיה|55.7234|37.5042","Ramenki|Раменки|רמנקי|55.6951|37.5100","Solntsevo|Солнцево|סולנצבו|55.6538|37.3912","Rasskazovka|Рассказовка|רסקזובקה|55.6342|37.3243"]},
+{n:9,c:"#ADB8BE",he:"סרפוחובסקו-טימיריאזבסקאיה",ru:"Серпуховско-Тимирязевская",ends:"Altufyevo ↔ Bulvar Dmitriya Donskogo",st:[
+"Altufyevo|Алтуфьево|אלטופיבו|55.8982|37.5871","Otradnoye|Отрадное|אוטרדנויה|55.8636|37.6050","Petrovsko-Razumovskaya|Петровско-Разумовская|פטרובסקו-רזומובסקאיה|55.8366|37.5757","Timiryazevskaya|Тимирязевская|טימיריאזבסקאיה|55.8191|37.5750","Savyolovskaya|Савёловская|סבילובסקאיה|55.7938|37.5878","Mendeleevskaya|Менделеевская|מנדלייבסקאיה|55.7819|37.5985","Tsvetnoy Bulvar|Цветной бульвар|צבטנוי בולוואר|55.7714|37.6201","Chekhovskaya|Чеховская|צ'יחובסקאיה|55.7655|37.6081","Borovitskaya|Боровицкая|בורוביצקאיה|55.7503|37.6094","Polyanka|Полянка|פוליאנקה|55.7366|37.6187","Serpukhovskaya|Серпуховская|סרפוחובסקאיה|55.7269|37.6226","Tulskaya|Тульская|טולסקאיה|55.7097|37.6226","Nagatinskaya|Нагатинская|נגטינסקאיה|55.6828|37.6226","Sevastopolskaya|Севастопольская|סבסטופולסקאיה|55.6511|37.6040","Yuzhnaya|Южная|יוז'נאיה|55.6224|37.6091","Annino|Аннино|אנינו|55.5836|37.5973","Bulvar Dmitriya Donskogo|Бульвар Дмитрия Донского|בולוואר דמיטרייה דונסקוגו|55.5679|37.5766"]},
+{n:10,c:"#BED12C",he:"ליובלינסקו-דמיטרובסקאיה",ru:"Люблинско-Дмитровская",ends:"Seligerskaya ↔ Zyablikovo",st:[
+"Seligerskaya|Селигерская|סליגרסקאיה|55.8630|37.5475","Tsvetnoy Bulvar10|Цветной бульвар|צבטנוי בולוואר (קו 10)|55.7714|37.6198","Trubnaya|Трубная|טרובנאיה|55.7676|37.6225","Sretensky Bulvar|Сретенский бульвар|סרטנסקי בולוואר|55.7658|37.6361","Chkalovskaya|Чкаловская|צ'קלובסקאיה|55.7554|37.6591","Rimskaya|Римская|רימסקאיה|55.7469|37.6797","Krestyanskaya Zastava|Крестьянская застава|קרסטיאנסקאיה זסטבה|55.7330|37.6628","Dubrovka|Дубровка|דוברובקה|55.7180|37.6767","Pechatniki|Печатники|פצ'טניקי|55.6926|37.7141","Lyublino|Люблино|ליובלינו|55.6769|37.7615","Maryino|Марьино|מריינו|55.6495|37.7448","Zyablikovo|Зябликово|זיבליקובו|55.6118|37.7456"]}
+];
+// מעברים בין תחנות באותו מתחם (הליכה קצרה)
+const MTRANS=[["Okhotny Ryad","Teatralnaya","Ploshchad Revolyutsii"],["Biblioteka imeni Lenina","Borovitskaya","Arbatskaya4","Aleksandrovsky Sad"],["Arbatskaya3","Arbatskaya4"],["Kievskaya3","Kievskaya4","Kievskaya5"],["Smolenskaya3","Smolenskaya4"],["Komsomolskaya","Komsomolskaya5"],["Kurskaya3","Kurskaya5","Chkalovskaya"],["Park Kultury","Park Kultury5"],["Chistye Prudy","Turgenevskaya","Sretensky Bulvar"],["Kitay-gorod6","Kitay-gorod7"],["Tretyakovskaya6","Tretyakovskaya8","Novokuznetskaya"],["Oktyabrskaya5","Oktyabrskaya6"],["Taganskaya5","Taganskaya7","Marksistskaya"],["Belorusskaya2","Belorusskaya5"],["Prospekt Mira5","Prospekt Mira6"],["Paveletskaya2","Paveletskaya5"],["Tverskaya","Pushkinskaya","Chekhovskaya"],["Tsvetnoy Bulvar","Tsvetnoy Bulvar10","Trubnaya"],["Novoslobodskaya","Mendeleevskaya"],["Dobryninskaya","Serpukhovskaya"],["Petrovsko-Razumovskaya"],["Krasnopresnenskaya","Barrikadnaya"]];
+// אטרקציות ליד תחנות (מזהי אתרים)
+const MNEAR={"Okhotny Ryad":["s_red","s_bolshoi","s_hist"],"Teatralnaya":["s_bolshoi","s_red"],"Ploshchad Revolyutsii":["s_red","s_basil"],"Aleksandrovsky Sad":["s_kremlin"],"Borovitskaya":["s_armoury","s_kremlin"],"Biblioteka imeni Lenina":["s_kremlin","s_pushkin"],"Kropotkinskaya":["s_pushkin","s_christ"],"Tretyakovskaya6":["s_tret"],"Park Kultury":["s_gorky"],"Sportivnaya":["s_novod"],"Vorobyovy Gory":["s_sparrow"],"VDNKh":["s_vdnh","s_cosmos","s_ostank"],"Kievskaya4":["s_seven"],"Delovoy Tsentr":["s_city"],"Arbatskaya3":["s_arbat"],"Smolenskaya3":["s_arbat"],"Kolomenskaya":["s_kolom"],"Tsaritsyno":["s_tsaritsyno"],"Park Pobedy":["s_victory"],"Mayakovskaya":["s_ponds"],"Kitay-gorod6":["s_zaryadye","s_syn"],"Kuznetsky Most":["s_sand"],"Novoslobodskaya":["s_jmus"]};
+const METRO_TICKETS=[
+["טרוייקה (Troika) – כרטיס ארנק","75 ₽ לנסיעה; פיקדון 150 ₽ (מוחזר) – נכון ל-2026"],
+["תשלום בכרטיס בנקאי בשער","83 ₽ (אם כרטיסים זרים לא עובדים – ראו הערה למעלה)"],
+["תשלום בזיהוי פנים (Face Pay)","71 ₽ – דורש רישום באפליקציה"],
+["כרטיס 90 דקות","≈112 ₽ – נסיעה אחת במטרו + מעברים בלתי מוגבלים באוטובוס/חשמלית"],
+["כרטיס יומי / 3 ימים","≈415 ₽ / ≈800 ₽ (משוער)"]
+];
+const TRANSPORT=[
+{id:"t_metro",cat:"מטרו",he:"מטרו מוסקבה",en:"Moscow Metro",ru:"Московский метрополитен",s:"המערכת המהירה והנוחה ביותר. תחנות מעוטרות כמו ארמונות. פועל בערך 05:30–01:00. תדירות כל 1–4 דקות.",price:"≈75 ₽ בטרוייקה",web:"https://mosmetro.ru"},
+{id:"t_mcc",cat:"רכבת",he:"טבעת מרכזית MCC ורכבות MCD",en:"MCC / MCD",ru:"МЦК / МЦД",s:"טבעת מעל הקרקע (קו 14) ורכבות 'דיאמטרים' D1–D5 שמחברות פרברים. נחשבות חלק מהמערכת העירונית (מעבר חינם עם טרוייקה).",price:"כמו מטרו באזור המרכזי"},
+{id:"t_bus",cat:"אוטובוס",he:"אוטובוסים, חשמליות וטרולייבוסים",en:"Bus / Tram",ru:"Автобус/Трамвай",s:"כרטיס מאותו מחיר. האפליקציות 'Mosgortrans' ו-Yandex מציגות מסלולים.",price:"≈75 ₽ בטרוייקה"},
+{id:"t_taxi",cat:"מונית",he:"מוניות",en:"Taxi",ru:"Такси",s:"הנפוצה: Yandex Go. דרוש מספר/אפליקציה מקומית ותשלום מקומי. בנמלי התעופה יש דוכני מוניות רשמיים. מונית מהמרכז לנמל תעופה בערך 2,000–3,500 ₽.",price:"מהמרכז לנמל תעופה: ≈2,000–3,500 ₽ (משוער)",web:"https://go.yandex"},
+{id:"t_aero",cat:"רכבת",he:"אירוקספרס לשדות התעופה",en:"Aeroexpress",ru:"Аэроэкспресс",s:"שרמטייבו↔בלורוסקי (≈35 דק'), דומודדובו↔פאבלצקי (≈45 דק'), ונוקובו↔קייבסקי. כל 30 דקות.",price:"בערך 600–700 ₽ (בדקו באתר)",web:"https://aeroexpress.ru/en"},
+{id:"t_car",cat:"רכב",he:"השכרת רכב",en:"Car rental",ru:"Аренда авто",s:"לא מומלץ למבקרים: תנועה כבדה, חנייה יקרה, כבישי חורף. דרוש רישיון בינלאומי. 'קארשרינג' (Yandex Drive) דורש חשבון מקומי.",price:"בדקו"},
+{id:"t_cable",cat:"אחר",he:"רכבל גבעות הדרורים",en:"Cable car",ru:"Канатная дорога",s:"מ-Vorobyovy Gory אל לוז'ניקי, פועל בימים/שעות מסוימים.",price:"מ-250 ₽"},
+{id:"t_river",cat:"אחר",he:"שייט בנהר",en:"River boats",ru:"Речной трамвай",s:"תעריף עונתי; בחורף מצומצם.",price:"בדקו"}
+];
+const TIPS=[
+{id:"k_air",cat:"הגעה",he:"הגעה משדה התעופה וחזרה",s:"ארבעה שדות: שרמטייבו (SVO), דומודדובו (DME), ונוקובו (VKO) וז'וקובסקי (ZIA). ההגעה למרכז: 45–120 דקות. אירוקספרס מהיר ומוסדר; מונית נוחה אך יקרה. תכננו שעות מרווח לטיסה בשל סגירות מרחב אווירי."},
+{id:"k_money",cat:"כסף",he:"מטבע והחלפת כסף",s:"רובל (₽/RUB) = 100 קופייקות. כרטיסי ויזה/מאסטרקארד זרים לא עובדים ברוסיה מאז 2022 (גם לא במכשירי כספומט). הביאו מזומן (דולר/יורו בשטרות חדשים ונקיים) והחליפו בבנקים רשמיים. אפשר להגיע עם שקל אך כמעט אין החלפה."},
+{id:"k_net",cat:"תקשורת",he:"אינטרנט וסים",s:"כרטיס סים/איסים זר מקבל חסימת אינטרנט/הודעות עד 24 שעות לאחר החיבור. ייתכנו הפסקות אינטרנט סלולרי במוסקבה בשל אירועי אבטחה; הורידו מפות ומתרגם לשימוש לא מקוון (המפות באפליקציה זו דורשות אינטרנט). וואטסאפ, אינסטגרם, יוטיוב וטלגרם מוגבלים ברוסיה."},
+{id:"k_doc",cat:"מסמכים",he:"מסמכים ורישום",s:"ישראלים נכנסים ללא ויזה עד 90 יום (נכון להיום – בדקו באתר משרד החוץ). דרכון תקף. המלון מבצע רישום הגירה. שאו עותק דרכון. בדיקות תעודה אפשריות ברחוב."},
+{id:"k_safe",cat:"בטיחות",he:"בטיחות והנחיות",s:"עקבו אחר הנחיות מל\"ל ומשרד החוץ הישראלי לרוסיה. הימנעו מצילום בניינים ממשלתיים, צבאיים וגשרים. בעת התרעת מל\"ט – פעלו לפי הוראות המקום. ב-04/2026 דווח על חקירות קצרות של ישראלים בשדה דומודדובו – שמרו על רגיעה ועל מסמכים."},
+{id:"k_emerg",cat:"בטיחות",he:"מספרי חירום",s:"חירום כללי: 112. משטרה 102, אמבולנס 103, כיבוי 101. השגרירות הישראלית: Bolshaya Ordynka 56, טלפון +7 495 660-2700 (בדקו באתר משרד החוץ)."},
+{id:"k_weather",cat:"אקלים",he:"מזג אוויר ולבוש",s:"חורף קר: ממוצע דצמבר בערך -4° עד -8° ויורד. הלילה יורד מוקדם (≈16:00). לבשו שכבות, כפפות וכובע. מגפיים נגד החלקה. הרבה מקומות מחוממים מאוד – הכינו שכבות הניתנות להסרה."},
+{id:"k_cult",cat:"נימוס",he:"נימוסים ותרבות",s:"מקובל להסיר מעיל בכניסה למסעדות/מוזיאונים (גרדרוב). נעליים ללא כבדות במקומות קדושים. טיפ ≈10% במסעדות. בכנסיות – כיסוי ראש לנשים ולבוש צנוע."},
+{id:"k_power",cat:"טכני",he:"חשמל",s:"220V, תקע אירופי (C/F). כנראה מתאים למכשירים ישראליים עם מתאם."}
+];
+const UPDATES=[
+{d:"16/11/2026",t:"טיסות מישראל",b:"אל על הודיעה על השעיית טיסות תל אביב–מוסקבה (הודעות קודמות עד אוקטובר; אישור עדכני – בדקו מול חברות התעופה). ניתן לטוס דרך מדינות שלישיות. בדקו לפני הזמנה.",lvl:"w",src:"https://www.themoscowtimes.com/2026/06/25/israels-el-al-suspends-moscow-flights-as-drone-attacks-disrupt-air-traffic-a93095/pdf"},
+{d:"16/11/2026",t:"סגירות נמלי תעופה",b:"נמלי התעופה של מוסקבה נסגרים לעיתים בשל מל\"טים (למשל 23/10/2026 נסגרו כל ארבעת הנמלים). צפו לעיכובים וביטולים; השאירו מרווח.",lvl:"w",src:"https://aerocorner.com/news/moscow-sheremetyevo-drone-alert-airports-closed-pulkovo-diversions/"},
+{d:"16/11/2026",t:"כרטיסי אשראי ותשלומים",b:"כרטיסי ויזה/מאסטרקארד זרים לא עובדים ברוסיה, וגם לא Apple Pay/Google Pay. הביאו מזומן.",lvl:"w",src:"https://www.gw2ru.com/plan-your-trip/245835-payments-in-russia-2026"},
+{d:"16/11/2026",t:"אינטרנט סלולרי",b:"הפסקות אינטרנט סלולרי במוסקבה והגבלת 'רשימה לבנה'. סים זר: חסימת 24 שעות ראשונות. הכינו מפות לא מקוונות.",lvl:"w",src:"https://russiable.com/internet-russia/"},
+{d:"16/11/2026",t:"כניסה וחקירות",b:"לפי הדיווחים, חקירות קצרות של ישראלים בדומודדובו באפריל 2026. אין ויזה לישראלים עד 90 יום.",lvl:"i",src:"https://www.themoscowtimes.com/2026/04/21/dozens-of-israelis-briefly-detained-questioned-at-moscow-airport-a92555/pdf"},
+{d:"02/01/2026",t:"מחירי תחבורה",b:"תעריפי מטרו עודכנו: 75 ₽ בטרוייקה, 83 ₽ בכרטיס בנקאי, 71 ₽ בזיהוי פנים.",lvl:"i",src:"https://russiable.com/using-moscow-metro/"}
+];
+
+'use strict';
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const LS='moscowGuide.v1';
+const DEF=()=>({tab:'map',hidden:{},edits:{},custom:{},rate:{},note:{},routes:[],cur:null,last:{open:[],scroll:0}});
+let S=(()=>{try{return Object.assign(DEF(),JSON.parse(localStorage.getItem(LS)||'{}'))}catch(e){return DEF()}})();
+function save(){try{localStorage.setItem(LS,JSON.stringify(S))}catch(e){toast('אין מקום פנוי לשמירה – מחקו תמונות או מסלולים ישנים')}}
+let _tt;function toast(m){const t=$('#toast');t.textContent=m;t.style.display='block';clearTimeout(_tt);_tt=setTimeout(()=>t.style.display='none',3200)}
+const pad=n=>String(n).padStart(2,'0');
+const fmtDMY=i=>{if(!i)return'';const[y,m,d]=i.split('-');return`${d}/${m}/${y}`};
+const parseDMY=s=>{const m=/^(\d{2})\/(\d{2})\/(\d{4})$/.exec((s||'').trim());if(!m)return null;const d=new Date(+m[3],+m[2]-1,+m[1]);if(d.getFullYear()!=+m[3]||d.getMonth()!=+m[2]-1||d.getDate()!=+m[1])return null;return`${m[3]}-${m[2]}-${m[1]}`};
+const isoOf=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const addDays=(i,n)=>{const[y,m,d]=i.split('-').map(Number);return isoOf(new Date(y,m-1,d+n))};
+const wdOf=i=>{const[y,m,d]=i.split('-').map(Number);return new Date(y,m-1,d).getDay()};
+const WD=['ראשון','שני','שלישי','רביעי','חמישי','שישי','שבת'];
+const MON=['ינואר','פברואר','מרץ','אפריל','מאי','יוני','יולי','אוגוסט','ספטמבר','אוקטובר','נובמבר','דצמבר'];
+const todayISO=()=>new Intl.DateTimeFormat('en-CA',{timeZone:CITY.tz}).format(new Date());
+const km=(a,b)=>{const R=6371,t=x=>x*Math.PI/180,dl=t(b[0]-a[0]),dn=t(b[1]-a[1]);const h=Math.sin(dl/2)**2+Math.cos(t(a[0]))*Math.cos(t(b[0]))*Math.sin(dn/2)**2;return 2*R*Math.asin(Math.sqrt(h))};
+const ltr=s=>`<bdi dir="ltr">${s}</bdi>`;
+const num=n=>Number(n).toLocaleString('en-US');
+
+/* ---------- תאריכים: שדה מוסווה + לוח שנה ---------- */
+function dateField(id,iso){return`<div class="dtw"><input type="text" id="${id}" class="dt" inputmode="numeric" maxlength="10" placeholder="DD/MM/YYYY" value="${iso?fmtDMY(iso):''}"><button type="button" class="btn l" data-a="cal" data-id="${id}">📅</button></div>`}
+const getDate=id=>parseDMY($('#'+id).value);
+document.addEventListener('input',e=>{const t=e.target;if(t.classList&&t.classList.contains('dt')){let d=t.value.replace(/\D/g,'').slice(0,8),o=d.slice(0,2);if(d.length>2)o+='/'+d.slice(2,4);if(d.length>4)o+='/'+d.slice(4);t.value=o}});
+function openCal(id){const inp=$('#'+id);let iso=parseDMY(inp.value)||todayISO();let[y,m]=iso.split('-').map(Number);m--;const sel=parseDMY(inp.value);const ov=document.createElement('div');ov.className='cal';document.body.appendChild(ov);
+ const draw=()=>{const first=new Date(y,m,1).getDay(),dim=new Date(y,m+1,0).getDate(),t=todayISO();let g=WD.map(w=>`<b>${w[0]}׳</b>`).join('');for(let i=0;i<first;i++)g+='<span></span>';for(let d=1;d<=dim;d++){const k=`${y}-${pad(m+1)}-${pad(d)}`;g+=`<button data-d="${k}" class="${k===t?'t':''} ${k===sel?'s':''}">${d}</button>`}
+  ov.innerHTML=`<div><div class="hd"><button class="btn l sm" data-n="1">›</button><span>${MON[m]} <select data-y>${Array.from({length:12},(_,i)=>y-2+i).map(v=>`<option ${v===y?'selected':''}>${v}</option>`).join('')}</select></span><button class="btn l sm" data-n="-1">‹</button></div><div class="g">${g}</div><div class="bar"><button class="btn l sm" data-t>היום</button><button class="btn l sm" data-x>סגור</button></div></div>`};
+ draw();ov.onclick=e=>{const b=e.target.closest('button');if(e.target===ov||(b&&b.dataset.x!=null)){ov.remove();return}if(!b)return;
+  if(b.dataset.n){m+=+b.dataset.n;if(m<0){m=11;y--}if(m>11){m=0;y++}draw()}
+  else if(b.dataset.d||b.dataset.t!=null){const k=b.dataset.d||todayISO();inp.value=fmtDMY(k);inp.dispatchEvent(new Event('change',{bubbles:true}));ov.remove()}};
+ ov.onchange=e=>{if(e.target.dataset.y!=null){y=+e.target.value;draw()}}}
+
+/* ---------- מודאל ---------- */
+function modal(html){closeModal();const m=document.createElement('div');m.className='modal';m.id='mdl';m.innerHTML=`<div>${html}</div>`;m.onclick=e=>{if(e.target===m)closeModal()};document.body.appendChild(m);return m}
+function closeModal(){const m=$('#mdl');if(m)m.remove()}
+
+/* ---------- מזג אוויר, מטבע ---------- */
+const WC={0:['☀️','בהיר'],1:['🌤️','בהיר ברובו'],2:['⛅','מעונן חלקית'],3:['☁️','מעונן'],45:['🌫️','ערפל'],48:['🌫️','ערפל'],51:['🌦️','טפטוף'],53:['🌦️','טפטוף'],55:['🌧️','טפטוף כבד'],56:['🌧️','גשם קפוא'],57:['🌧️','גשם קפוא'],61:['🌧️','גשם קל'],63:['🌧️','גשם'],65:['🌧️','גשם כבד'],66:['🌧️','גשם קפוא'],67:['🌧️','גשם קפוא'],71:['🌨️','שלג קל'],73:['🌨️','שלג'],75:['❄️','שלג כבד'],77:['🌨️','גרגרי שלג'],80:['🌦️','ממטרים'],81:['🌧️','ממטרים'],82:['⛈️','ממטרים חזקים'],85:['🌨️','ממטרי שלג'],86:['🌨️','ממטרי שלג'],95:['⛈️','סופת רעמים'],96:['⛈️','סופת רעמים וברד'],99:['⛈️','סופת רעמים וברד']};
+const wc=c=>WC[c]||WC[3];
+let WX=null,RATE=null;
+async function loadWx(force){try{const c=JSON.parse(localStorage.getItem('wx')||'null');if(c&&!force&&Date.now()-c.t<36e5){WX=c.d;renderWx();return}}catch(e){}
+ try{const r=await fetch('https://api.open-meteo.com/v1/forecast?latitude=55.7558&longitude=37.6173&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,sunrise,sunset&timezone=Europe%2FMoscow&forecast_days=16');WX=await r.json();localStorage.setItem('wx',JSON.stringify({t:Date.now(),d:WX}))}catch(e){try{WX=JSON.parse(localStorage.getItem('wx')).d}catch(_){}}
+ renderWx()}
+function wxFor(i){if(!WX||!WX.daily)return null;const k=WX.daily.time.indexOf(i);if(k<0)return null;const D=WX.daily;return{code:D.weather_code[k],tmax:D.temperature_2m_max[k],tmin:D.temperature_2m_min[k],pp:D.precipitation_probability_max[k],sr:D.sunrise[k],ss:D.sunset[k]}}
+async function loadRate(force){try{const c=JSON.parse(localStorage.getItem('rate')||'null');if(c&&!force&&Date.now()-c.t<216e5){RATE=c;renderWx();return}}catch(e){}
+ try{const r=await fetch('https://open.er-api.com/v6/latest/ILS');const j=await r.json();const x=j.rates;RATE={t:Date.now(),ils:x.RUB,usd:x.RUB/x.USD,eur:x.RUB/x.EUR};localStorage.setItem('rate',JSON.stringify(RATE))}catch(e){try{RATE=JSON.parse(localStorage.getItem('rate'))}catch(_){}}
+ renderWx();if(S.tab==='news'||S.tab==='tips')render()}
+function moscowTime(){const f=tz=>new Intl.DateTimeFormat('en-GB',{timeZone:tz,hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date());const o=tz=>{const p=new Intl.DateTimeFormat('en-US',{timeZone:tz,timeZoneName:'longOffset'}).formatToParts(new Date()).find(x=>x.type==='timeZoneName').value;const m=/GMT([+-]\d+)?/.exec(p);return m&&m[1]?+m[1]:0};let diff=o(CITY.tz)-o('Asia/Jerusalem');return{t:f(CITY.tz),diff}}
+function renderWx(){const el=$('#wx');if(!el)return;const mt=moscowTime();let h=`<div class="now">`;
+ if(WX&&WX.current){const c=wc(WX.current.weather_code);h+=`<span style="font-size:34px">${c[0]}</span><div><span class="big">${ltr(Math.round(WX.current.temperature_2m)+"°")}</span> <small>מרגיש ${ltr(Math.round(WX.current.apparent_temperature)+"°")} · ${c[1]} · רוח ${ltr(Math.round(WX.current.wind_speed_10m))} קמ״ש</small></div>`}else h+=`<div>טוען תחזית... (נדרש אינטרנט)</div>`;
+ h+=`</div><button id="btnToday" data-a="today">🗓️ מה עושים היום</button><div style="font-size:12px;margin-top:2px">🕒 במוסקבה ${mt.t} (${mt.diff>0?'+'+mt.diff+' ש׳ מישראל':mt.diff<0?mt.diff+' ש׳ מישראל':'כמו בישראל'})${RATE?` · ${ltr('₪1 = '+RATE.ils.toFixed(2)+' ₽')}`:''}</div>`;
+ if(WX&&WX.daily){h+='<div class="days">';WX.daily.time.slice(0,7).forEach((d,i)=>{const c=wc(WX.daily.weather_code[i]);h+=`<div class="d"><b>${i==0?'היום':WD[wdOf(d)]}</b>${d.slice(8)}/${d.slice(5,7)}<br>${c[0]}<br>${ltr(Math.round(WX.daily.temperature_2m_max[i])+"° / "+Math.round(WX.daily.temperature_2m_min[i])+"°")}<br>💧${WX.daily.precipitation_probability_max[i]??'–'}%</div>`});h+='</div>'}
+ el.innerHTML=h}
+
+/* ---------- נתונים ומיזוג עריכות ---------- */
+const AREAS=[
+{id:"a_center",cat:"אזור",he:"המרכז ההיסטורי (טברסקאיה / קיטאי-גורוד / טיאטראלנאיה)",s:"הכי נוח לתייר: הולכים לכיכר האדומה, לבולשוי ולקרמלין.",pros:"הליכה לאטרקציות, מסעדות וחיי לילה.",cons:"יקר ורועש יחסית.",metro:"Teatralnaya, Okhotny Ryad, Tverskaya, Kitay-gorod",price:"4–5★ ≈ 15,000–70,000 ₽ ללילה (משוער)",ll:[55.7590,37.6200],hotels:["h_metropol","h_national","h_savoy"]},
+{id:"a_zam",cat:"אזור",he:"זמוסקבורצ'ייה (מעבר לנהר)",s:"שכונה שקטה עם מוזיאונים ובתי קפה, ליד גלריית טרטיאקוב.",pros:"שקט, אווירה מקומית, 15 דקות הליכה לכיכר.",cons:"פחות אפשרויות מלון.",metro:"Tretyakovskaya, Novokuznetskaya, Polyanka",price:"≈10,000–50,000 ₽",ll:[55.7420,37.6300],hotels:["h_baltschug"]},
+{id:"a_west",cat:"אזור",he:"קייבסקאיה / קוטוזובסקי (מערב)",s:"קרוב לאירוקספרס לוונוקובו וקניונים.",pros:"מחירים טובים יותר ותחבורה מצוינת.",cons:"רחוק מהכיכר האדומה (מטרו 10–15 דק').",metro:"Kievskaya, Smolenskaya, Kutuzovskaya",price:"≈8,000–25,000 ₽",ll:[55.7450,37.5660],hotels:["h_ukr","h_slav","h_lotte"]},
+{id:"a_north",cat:"אזור",he:"צפון (פרוספקט מירה / ויד'אנח)",s:"אזור מקומי יותר, תחנות רבות וקווים ישירים.",pros:"זול יחסית, ליד VDNKh.",cons:"רחוק מהמרכז.",metro:"Prospekt Mira, VDNKh",price:"≈6,000–16,000 ₽",ll:[55.7826,37.6246],hotels:["h_olym"]},
+{id:"a_city",cat:"אזור",he:"מוסקבה סיטי",s:"גורדי שחקים, קניונים ותצפיות.",pros:"מודרני, חדשים.",cons:"פחות אופי עירוני; רחוק מהמרכז ההיסטורי.",metro:"Delovoy Tsentr, Vystavochnaya",price:"≈10,000–30,000 ₽",ll:[55.7494,37.5395],hotels:[]},
+{id:"a_station",cat:"אזור",he:"סביבת תחנות הרכבת (קומסומולסקאיה)",s:"שלוש תחנות רכבת גדולות; נוח אם נוסעים לערים אחרות.",pros:"גישה לרכבות לסנט פטרבורג.",cons:"רועש ופחות מושך.",metro:"Komsomolskaya",price:"≈6,000–15,000 ₽",ll:[55.7757,37.6551],hotels:[]}
+];
+const SEC={
+ map:{t:'🗺️ מפה ואתרים',get:()=>SITES,ico:'🏛️',col:'#b3122b',photo:1,ll:1,add:'אתר'},
+ hotels:{t:'🏨 מלונות מומלצים',get:()=>HOTELS,ico:'🏨',col:'#7b3fbf',photo:1,ll:1,add:'מלון'},
+ rests:{t:'🍽️ מסעדות מומלצות',get:()=>RESTS,ico:'🍽️',col:'#e63946',photo:1,ll:1,add:'מסעדה'},
+ food:{t:'🥟 אוכל לאומי',get:()=>FOODS,ico:'🥟',col:'#f47c20',photo:1,add:'מאכל'},
+ shops:{t:'🛍️ קניות',get:()=>SHOPS,ico:'🛍️',col:'#0e9aa7',photo:1,ll:1,add:'חנות/קניון'},
+ markets:{t:'🏪 שווקים',get:()=>MARKETS,ico:'🏪',col:'#1b9e5a',photo:1,ll:1,add:'שוק'},
+ events:{t:'🎭 אירועי תרבות וספורט',get:()=>EVENTS,ico:'🎭',col:'#e63946',add:'אירוע'},
+ area:{t:'📍 אזור שינה',get:()=>AREAS,ico:'📍',col:'#7b3fbf',ll:1,add:'אזור'},
+ transport:{t:'🚌 תחבורה',get:()=>TRANSPORT,ico:'🚌',col:'#1d6fd6',add:'אמצעי תחבורה'},
+ tips:{t:'💡 טיפים',get:()=>TIPS,ico:'💡',col:'#b8860b',add:'טיפ'}
+};
+const items=sec=>[...SEC[sec].get().map(x=>S.edits[x.id]?Object.assign({},x,S.edits[x.id]):x),...(S.custom[sec]||[])];
+function findItem(id){for(const k in SEC){const f=items(k).find(x=>x.id===id);if(f)return Object.assign({sec:k},f)}return null}
+const ROWS=[['h','היסטוריה והסבר'],['why','למה מומלץ'],['ing','מרכיבים'],['note','הערה'],['pros','יתרונות'],['cons','חסרונות'],['metro','תחנות מטרו'],['addr','כתובת'],['ph','טלפון'],['web','אתר'],['hrs','ימים ושעות'],['price','מחיר'],['free','חינם והנחות'],['tix','כרטיסים'],['book','הזמנה מראש'],['go','איך מגיעים'],['when','מתי'],['zone','אזור']];
+const gLink=(to,from,mode)=>`https://www.google.com/maps/dir/?api=1&destination=${to[0]},${to[1]}${from?`&origin=${from[0]},${from[1]}`:''}&travelmode=${mode||'transit'}`;
+const gPlace=ll=>`https://www.google.com/maps/search/?api=1&query=${ll[0]},${ll[1]}`;
+let CUR=null;
+function getLoc(cb){if(CUR&&Date.now()-CUR.t<6e4)return cb(CUR.p);if(!navigator.geolocation){toast('המכשיר לא מאפשר לזהות מיקום');return}navigator.geolocation.getCurrentPosition(p=>{CUR={p:[p.coords.latitude,p.coords.longitude],t:Date.now()};cb(CUR.p)},()=>toast('לא הצלחתי לזהות מיקום – בדקו שאישרתם גישה למיקום'),{enableHighAccuracy:true,timeout:15000})}
+
+/* ---------- תמונות מויקיפדיה ---------- */
+async function wikiImg(t){const k='wp:'+t;const v=localStorage.getItem(k);if(v!==null)return v||null;try{const r=await fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(t));if(!r.ok){if(r.status===404)localStorage.setItem(k,'');return null}const j=await r.json();const u=(j.thumbnail&&j.thumbnail.source)||'';localStorage.setItem(k,u);return u||null}catch(e){return null}}
+let IO;function loadPhotos(root=document){if(!IO)IO=new IntersectionObserver(es=>es.forEach(async en=>{if(!en.isIntersecting)return;IO.unobserve(en.target);const el=en.target,img=el.dataset.img,w=el.dataset.wiki;let u=img;if(!u&&w)u=await wikiImg(w);if(u){const i=new Image();i.alt='';i.onload=()=>{el.appendChild(i);if(!img)el.insertAdjacentHTML('beforeend','<small>ויקיפדיה</small>')};i.src=u}}),{rootMargin:'300px'});$$('.ph[data-wiki],.ph[data-img]',root).forEach(e=>{if((e.dataset.wiki||e.dataset.img)&&!e.querySelector('img'))IO.observe(e)})}
+
+/* ---------- כרטיסים ורשימות ---------- */
+const F={};
+const CHI='#b3122b';
+function starsHtml(id){const r=S.rate[id]||0;return`<span class="stars" data-id="${id}">${[1,2,3,4,5].map(i=>`<span class="${i<=r?'on':''}" data-a="rate" data-id="${id}" data-v="${i}">★</span>`).join('')}</span>`}
+function card(sec,it){const cfg=SEC[sec],id=it.id,hid=S.hidden[id],open=S.last.open.includes(id);
+ const meta=[it.stars?'⭐'.repeat(it.stars):'',it.cat,it.price&&sec!=='map'?'💰 '+it.price:'',it.hrs&&sec!=='map'?'🕒 '+it.hrs:'',sec==='map'&&it.closed&&it.closed.length?'🚫 סגור: '+it.closed.map(d=>WD[d]).join(', '):'',it.when?'📅 '+it.when:''].filter(Boolean).map(x=>`<span>${esc(x)}</span>`).join('');
+ const rows=ROWS.filter(r=>it[r[0]]).map(r=>`<dt>${r[1]}</dt><dd>${r[0]==='web'?`<a href="${esc(it.web)}" target="_blank" rel="noopener">${esc(it.web)}</a>`:r[0]==='ph'?`<a href="tel:${esc(it.ph.replace(/[^+\d]/g,''))}">${esc(it.ph)}</a>`:esc(it[r[0]])}</dd>`).join('');
+ const names=[it.en,it.ru].filter(Boolean).join(' · ');
+ return`<div class="card ${hid?'hid':''}" id="c_${id}" style="--c:${cfg.col}">${cfg.photo?`<div class="ph" data-wiki="${esc(it.wiki||'')}" data-img="${esc(it.img||'')}">${cfg.ico}</div>`:''}<div class="bd"><h3>${esc(it.he)}${names?`<span>${esc(names)}</span>`:''}</h3><p style="margin:4px 0">${esc(it.s||'')}</p><div class="meta">${meta}</div>${starsHtml(id)}
+ <div class="acts"><button class="btn sm" data-a="more" data-id="${id}">${open?'▲ פחות':'▼ הרחבה ופרטים'}</button>${it.ll?`<button class="btn sm g" data-a="onmap" data-id="${id}">📍 במפה</button><button class="btn sm l" data-a="gdir" data-id="${id}">🧭 הגעה</button>`:''}${sec==='map'?`<button class="btn sm o" data-a="addroute" data-id="${id}">➕ למסלול</button>`:''}<button class="btn sm l" data-a="share" data-id="${id}">📤</button><button class="btn sm l" data-a="edit" data-sec="${sec}" data-id="${id}">✏️</button><button class="btn sm l" data-a="hide" data-id="${id}">${hid?'👁 החזר':'🙈 הסתר'}</button></div>
+ <div class="more ${open?'on':''}" id="m_${id}"><dl>${rows}</dl><label class="fld"><b>📝 ההערה שלי</b><textarea data-note="${id}">${esc(S.note[id]||'')}</textarea></label></div></div></div>`}
+function pageList(sec){const cfg=SEC[sec];F[sec]=F[sec]||{q:'',cat:'',hid:false};
+ return`<h2>${cfg.t}</h2>${sec==='hotels'?'<div class="info">מותגי מלונות בינלאומיים רבים עזבו את רוסיה ב-2022, ושמות/בעלות עשויים להשתנות. המחירים משוערים – בדקו לפני הזמנה. כרטיסי אשראי זרים לא עובדים: תכננו תשלום במזומן/אצל סוכן.</div>':''}${sec==='rests'?'<div class="info">מחירים משוערים. תשלום בכרטיסי אשראי זרים לא נתמך – הביאו מזומן. שאלו על כשרות/חזיר – לא כל המסעדות מתאימות.</div>':''}
+ <div class="bar"><input type="search" id="q" placeholder="🔍 חיפוש" value="${esc(F[sec].q)}"><button class="btn gold" data-a="add" data-sec="${sec}">➕ הוסף ${cfg.add}</button></div><div class="bar" id="chips"></div><div id="list"></div>`}
+function drawList(sec){const f=F[sec],all=items(sec),cats=[...new Set(all.map(x=>x.cat).filter(Boolean))];const hc=all.filter(x=>S.hidden[x.id]).length;
+ $('#chips').innerHTML=(cats.length?[`<span class="chip ${f.cat?'':'on'}" data-a="cat" data-v="">הכול</span>`,...cats.map(c=>`<span class="chip ${f.cat===c?'on':''}" data-a="cat" data-v="${esc(c)}">${esc(c)}</span>`)].join(''):'')+(hc?`<span class="chip ${f.hid?'on':''}" data-a="showhid">🙈 מוסתרים (${hc})</span>`:'');
+ const q=f.q.trim().toLowerCase();const L=all.filter(x=>(f.hid||!S.hidden[x.id])&&(!f.cat||x.cat===f.cat)&&(!q||[x.he,x.en,x.ru,x.s,x.cat].join(' ').toLowerCase().includes(q)));
+ $('#list').innerHTML=L.length?L.map(x=>card(sec,x)).join(''):'<div class="info">אין פריטים להצגה. אפשר להחזיר פריטים מוסתרים או להוסיף חדש.</div>';loadPhotos($('#list'))}
+
+/* ---------- עריכה / הוספה ---------- */
+const EF=[['he','שם בעברית'],['en','שם באנגלית'],['ru','שם בשפת המקום'],['cat','קטגוריה'],['s','תיאור קצר'],['h','הסבר/היסטוריה'],['addr','כתובת'],['ph','טלפון'],['web','אתר אינטרנט'],['hrs','ימים ושעות'],['price','מחיר'],['free','כניסה חינם/הנחות'],['tix','כרטיסים'],['go','איך מגיעים']];
+function editModal(sec,id){const base=id?findItem(id):null,v=base||{};const hasLL=SEC[sec].ll;
+ modal(`<h3>${id?'✏️ עריכה':'➕ הוספה'}: ${SEC[sec].add}</h3>${EF.map(f=>`<label class="fld"><b>${f[1]}</b>${f[0]==='s'||f[0]==='h'?`<textarea data-f="${f[0]}">${esc(v[f[0]]||'')}</textarea>`:`<input type="text" data-f="${f[0]}" value="${esc(v[f[0]]||'')}">`}</label>`).join('')}${hasLL?`<label class="fld"><b>מיקום (קו רוחב, קו אורך) – אפשר להדביק מ'מפות גוגל'</b><input type="text" data-f="ll" dir="ltr" value="${v.ll?v.ll.join(', '):''}"></label>`:''}<label class="fld"><b>תמונה</b><input type="file" accept="image/*" id="ef_img"></label>${v.img?`<img src="${esc(v.img)}" style="max-width:100%;border-radius:10px">`:''}
+ <div class="bar"><button class="btn g" data-a="saveedit" data-sec="${sec}" data-id="${id||''}">💾 שמור</button>${id&&S.edits[id]?`<button class="btn l" data-a="resetedit" data-id="${id}">↩ שחזר מקור</button>`:''}${id&&String(id).startsWith('c_')?`<button class="btn r" data-a="deluser" data-sec="${sec}" data-id="${id}">🗑 מחק</button>`:''}<button class="btn l" data-a="closem">ביטול</button></div>`)}
+function readImg(file,max=800){return new Promise(res=>{const r=new FileReader();r.onload=()=>{const i=new Image();i.onload=()=>{const s=Math.min(1,max/Math.max(i.width,i.height)),c=document.createElement('canvas');c.width=i.width*s;c.height=i.height*s;c.getContext('2d').drawImage(i,0,0,c.width,c.height);res(c.toDataURL('image/jpeg',.72))};i.src=r.result};r.readAsDataURL(file)})}
+async function saveEdit(sec,id){const o={};$$('#mdl [data-f]').forEach(e=>{const k=e.dataset.f;let v=e.value.trim();if(k==='ll'){const m=v.match(/-?\d+\.?\d*/g);o.ll=m&&m.length>=2?[+m[0],+m[1]]:null}else o[k]=v});const fi=$('#ef_img').files[0];if(fi)o.img=await readImg(fi);
+ if(!o.he){toast('חובה למלא שם');return}
+ if(id&&String(id).startsWith('c_')){const a=S.custom[sec]||[];const i=a.findIndex(x=>x.id===id);a[i]=Object.assign(a[i],o)}
+ else if(id){S.edits[id]=Object.assign(S.edits[id]||{},o)}
+ else{const n=Object.assign({id:'c_'+Date.now()},o);(S.custom[sec]=S.custom[sec]||[]).push(n)}
+ save();closeModal();render();toast('נשמר')}
+
+/* ---------- שיתוף / קבצים ---------- */
+async function shareText(title,text,url){try{if(navigator.share){await navigator.share({title,text,url});return}}catch(e){if(e.name==='AbortError')return}
+ modal(`<h3>📤 שיתוף</h3><textarea id="sh" style="min-height:140px">${esc(text+(url?'\n'+url:''))}</textarea><div class="bar"><button class="btn g" data-a="copy">📋 העתק</button><a class="btn" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(text+(url?'\n'+url:''))}">💬 שלח בוואטסאפ</a><button class="btn l" data-a="closem">סגור</button></div>`)}
+async function saveFile(defName,content,mime){const blob=new Blob([content],{type:mime||'application/json'});
+ if(window.showSaveFilePicker){try{const h=await window.showSaveFilePicker({suggestedName:defName,types:[{description:'קובץ',accept:{[mime||'application/json']:['.'+defName.split('.').pop()]}}]});const w=await h.createWritable();await w.write(blob);await w.close();toast('נשמר');return}catch(e){if(e.name==='AbortError')return}}
+ const n=prompt('איך לקרוא לקובץ?',defName);if(!n)return;const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=n;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),5000);toast('הקובץ נשמר בהורדות')}
+function itemText(it){return[`${it.he}${it.en?` (${it.en})`:''}${it.ru?` – ${it.ru}`:''}`,it.s,it.addr&&'כתובת: '+it.addr,it.hrs&&'שעות: '+it.hrs,it.price&&'מחיר: '+it.price,it.ll&&gPlace(it.ll)].filter(Boolean).join('\n')}
+const b64e=async s=>{const cs=new Blob([s]).stream().pipeThrough(new CompressionStream('gzip'));const buf=new Uint8Array(await new Response(cs).arrayBuffer());let b='';buf.forEach(x=>b+=String.fromCharCode(x));return btoa(b).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'')};
+const b64d=async t=>{t=t.replace(/-/g,'+').replace(/_/g,'/');const b=atob(t),a=new Uint8Array(b.length);for(let i=0;i<b.length;i++)a[i]=b.charCodeAt(i);return await new Response(new Blob([a]).stream().pipeThrough(new DecompressionStream('gzip'))).text()};
+const userData=()=>({hidden:S.hidden,edits:S.edits,custom:S.custom,rate:S.rate,note:S.note,routes:S.routes});
+function mergeData(d){['hidden','edits','rate','note'].forEach(k=>Object.assign(S[k],d[k]||{}));for(const k in d.custom||{}){const a=S.custom[k]=S.custom[k]||[];d.custom[k].forEach(x=>{if(!a.find(y=>y.id===x.id))a.push(x)})}(d.routes||[]).forEach(r=>{if(!S.routes.find(x=>x.id===r.id))S.routes.push(r)});save();render()}
+async function shareApp(){const j=JSON.stringify(userData());const t=await b64e(j);const base=location.href.split('#')[0];const url=base+'#s='+t;
+ const bad=location.protocol==='file:';
+ modal(`<h3>🔗 שליחת "מוסקבה שלי" לחבר</h3>${bad?'<div class="warn">האפליקציה נפתחת כרגע כקובץ במכשיר, ולכן קישור לא יעבוד אצל החבר. אפשר לשלוח לו במקום זה את קובץ ההתאמה ("ייצוא" בהגדרות) או להתקין את האפליקציה באתר.</div>':''}${url.length>7000?'<div class="warn">ההתאמה שלך גדולה (למשל בגלל תמונות) והקישור ארוך מאוד. עדיף לשלוח קובץ.</div>':''}<textarea id="sh" style="min-height:90px" dir="ltr">${esc(url)}</textarea><div class="bar"><button class="btn g" data-a="copy">📋 העתק קישור</button><button class="btn" data-a="shareurl">📤 שתף</button><button class="btn l" data-a="closem">סגור</button></div>`);window._shareUrl=url}
+function sendLoc(){getLoc(p=>{const u=`https://maps.google.com/?q=${p[0]},${p[1]}`;shareText('המיקום שלי','אני נמצא/ת כאן:',u)})}
+function exportAll(){saveFile('moscow_my_data.json',JSON.stringify({v:VERSION,city:'moscow',data:userData()},null,1))}
+function importAll(){const i=document.createElement('input');i.type='file';i.accept='.json,application/json';i.onchange=async()=>{try{const j=JSON.parse(await i.files[0].text());mergeData(j.data||j.routes&&{routes:j.routes}||j);toast('נטען')}catch(e){toast('הקובץ לא תקין')}};i.click()}
+function settings(){const hid=Object.keys(S.hidden).filter(k=>S.hidden[k]).map(k=>findItem(k)).filter(Boolean);
+ modal(`<h3>⚙️ הגדרות והנתונים שלי</h3><div class="bar"><button class="btn" data-a="exp">💾 ייצוא כל ההתאמות לקובץ</button><button class="btn" data-a="imp">📂 ייבוא מקובץ</button><button class="btn g" data-a="shareapp">🔗 שליחת "מוסקבה שלי" לחבר</button><button class="btn o" data-a="sendloc">📍 שליחת המיקום שלי</button></div>
+ <b>🙈 פריטים מוסתרים (${hid.length})</b><div>${hid.map(h=>`<div class="stop"><span style="flex:1">${esc(h.he)}</span><button class="btn sm l" data-a="hide" data-id="${h.id}" data-keep="1">החזר</button></div>`).join('')||'<small>אין</small>'}</div>
+ <div class="bar" style="margin-top:12px"><button class="btn r" data-a="reset">🗑 מחיקת כל ההתאמות האישיות</button></div><small>גרסה ${VERSION} · יוצר: יעקב זוהר</small>`)}
+
+/* ---------- טיפים: מחשבון, ביטויים ---------- */
+function speak(t){try{const u=new SpeechSynthesisUtterance(t);u.lang='ru-RU';const v=speechSynthesis.getVoices().find(x=>x.lang&&x.lang.startsWith('ru'));if(v)u.voice=v;speechSynthesis.cancel();speechSynthesis.speak(u)}catch(e){toast('המכשיר לא תומך בהשמעה')}}
+function tipsExtra(){const r=RATE?RATE.ils:null;return`<div class="sec" style="--c:#b8860b">💱 מחשבון מטבע</div><div class="card" style="--c:#b8860b"><div class="bd">${r?`<div class="bar"><input type="number" id="cv_i" value="100" style="width:110px"><select id="cv_d"><option value="il">₪ שקל ← ₽ רובל</option><option value="ru">₽ רובל ← ₪ שקל</option></select><b id="cv_o"></b></div><small>שער חי: ₪1 = ${r.toFixed(2)} ₽ · $1 ≈ ${RATE.usd.toFixed(1)} ₽ · €1 ≈ ${RATE.eur.toFixed(1)} ₽ (מתעדכן בריענון; מקור: open.er-api.com). שער המרה בפועל בבנק/מכונת החלפה שונה.</small>`:'<small>אין חיבור לשער חי. לחצו 🔄 ברענון כשיש אינטרנט.</small>'}</div></div>
+ <div class="sec" style="--c:#14213d">🗣️ ביטויים שימושיים (לחצו 🔊 להשמעה)</div><table class="t"><tr><th>עברית</th><th>רוסית</th><th>הגייה</th><th></th></tr>${PHRASES.map(p=>`<tr><td>${esc(p[0])}</td><td class="ru">${esc(p[1])}</td><td style="direction:ltr;text-align:right">${esc(p[2])}</td><td><button class="btn sm" data-a="say" data-t="${esc(p[1])}">🔊</button></td></tr>`).join('')}</table><small>ההשמעה משתמשת בקול הרוסי של המכשיר (אם מותקן).</small>`}
+function convInit(){const f=()=>{const i=$('#cv_i');if(!i||!RATE)return;const v=+i.value||0,d=$('#cv_d').value;$('#cv_o').textContent=d==='il'?`= ${num(Math.round(v*RATE.ils))} ₽`:`= ${(v/RATE.ils).toFixed(2)} ₪`};['cv_i','cv_d'].forEach(k=>{const e=$('#'+k);if(e)e.oninput=e.onchange=f});f()}
+
+/* ---------- עדכונים ---------- */
+function newsPage(){return`<h2>🔔 עדכונים חשובים למטייל</h2><div class="info">מידע נאסף ב-16/11/2026 ממקורות ציבוריים. המצב משתנה במהירות – בדקו לפני יציאה. כפתור 🔄 למעלה מרענן מזג אוויר ושער.</div>${UPDATES.map(u=>`<div class="${u.lvl==='w'?'warn':'info'}"><b>${esc(u.t)}</b> <small>(${u.d})</small><br>${esc(u.b)} <a href="${esc(u.src)}" target="_blank" rel="noopener">מקור</a></div>`).join('')}
+ <div class="sec" style="--c:#0e9aa7">💱 שער הרובל מול השקל</div><div class="card" style="--c:#0e9aa7"><div class="bd">${RATE?`₪1 = <b>${RATE.ils.toFixed(2)} ₽</b> · $1 ≈ ${RATE.usd.toFixed(1)} ₽ · €1 ≈ ${RATE.eur.toFixed(1)} ₽<br><small>עודכן: ${new Date(RATE.t).toLocaleString('he-IL')}</small>`:'אין נתון – נדרש חיבור לאינטרנט'}</div></div>
+ <div class="sec" style="--c:#14213d">🔗 קישורים רשמיים</div><div class="card"><div class="bd"><a target="_blank" rel="noopener" href="https://www.gov.il/he/departments/dynamiccollectors/travel-warnings-nsc">אזהרות מסע – המל״ל</a><br><a target="_blank" rel="noopener" href="https://embassies.gov.il/moscow">שגרירות ישראל במוסקבה</a><br><a target="_blank" rel="noopener" href="https://kreml.ru/en">הקרמלין – כרטיסים ושעות</a><br><a target="_blank" rel="noopener" href="https://aeroexpress.ru/en">אירוקספרס</a><br><a target="_blank" rel="noopener" href="https://mosmetro.ru">מטרו מוסקבה</a></div></div>`}
+function alertStrip(){const el=$('#alert');el.innerHTML=`⚠️ <span style="flex:1">עדכונים חשובים: טיסות מישראל, סגירת נמלי תעופה, כרטיסי אשראי זרים לא עובדים, הפסקות אינטרנט סלולרי. <a href="#" data-a="gonews">לפרטים</a></span><button class="hb" style="background:#0002;color:#000;width:26px;height:26px;font-size:14px" data-a="closealert">✖</button>`;if(S.alertOff===todayISO())el.style.display='none'}
+
+/* ---------- מה עושים היום ---------- */
+let TD={date:null,seed:0};
+function todayModal(){TD.date=TD.date||todayISO();modal(`<h3>🗓️ מה עושים היום</h3><div class="bar"><b>תאריך:</b>${dateField('td_d',TD.date)}<button class="btn l" data-a="tdother">🔀 הצעה אחרת</button></div><div id="td_o"></div><div class="bar"><button class="btn l" data-a="closem">סגור</button></div>`);$('#td_d').onchange=()=>{const d=getDate('td_d');if(d){TD.date=d;tdDraw()}};tdDraw()}
+function tdDraw(){const iso=TD.date,wd=wdOf(iso),w=wxFor(iso),rt=routeForDate(iso);let h=`<div class="info"><b>${WD[wd]} ${fmtDMY(iso)}</b> · ${w?`${wc(w.code)[0]} ${wc(w.code)[1]}, ${ltr(Math.round(w.tmax)+'° / '+Math.round(w.tmin)+'°')}, גשם/שלג ${w.pp??'–'}%${w.sr?` · שקיעה ${w.ss.slice(11)}`:''}`:'אין תחזית לתאריך זה'}</div>`;
+ if(rt){h+=`<div class="sec">🧭 לפי המסלול שבניתם: ${esc(rt.r.name)} – יום ${rt.i+1}</div>`+rt.r.items.filter(x=>x.day===rt.i).map((x,k)=>`<div class="stop"><span class="n">${k+1}</span><div>${esc(stopName(x))}</div></div>`).join('')}
+ else{const bad=w&&(w.code>=51||w.tmax<-10);const all=items('map').filter(s=>!S.hidden[s.id]),open=all.filter(s=>!(s.closed||[]).includes(wd)),closed=all.filter(s=>(s.closed||[]).includes(wd));
+  const rot=a=>a.length?a.slice(TD.seed%a.length).concat(a.slice(0,TD.seed%a.length)):a;const out=rot(open.filter(s=>!s.indoor)),ind=rot(open.filter(s=>s.indoor));
+  const night=open.filter(s=>/תמיד|כל היום|פתוח כל/.test(s.hrs||'')),morning=bad?ind[0]:out.find(s=>!night.includes(s))||out[0],after=ind.find(s=>s!==morning)||ind[0],ev=bad?(items('events')[0]&&{he:items('events')[0].he,s:items('events')[0].s}):rot(night)[0];const rest=rot(items('rests').filter(r=>!S.hidden[r.id]))[0];
+  const L=[['🌅 בוקר',morning],['🍽️ צהריים',rest],['🏛️ אחר הצהריים',after],['🌙 ערב',ev]];
+  h+=`<div class="${bad?'warn':'info'}">${bad?'מזג האוויר קשה (גשם/שלג/קור) – בחרתי בעיקר מקומות סגורים.':'מזג האוויר סביר – כדאי להתחיל בחוץ ולעבור לפנים אחר הצהריים.'}${wd===4?' <b>ביום חמישי הקרמלין וחדר הנשק סגורים.</b>':''}${wd===1?' <b>ביום שני מוזיאונים רבים סגורים.</b>':''}</div>`+L.filter(x=>x[1]).map(x=>`<div class="stop"><b style="min-width:90px">${x[0]}</b><div>${esc(x[1].he)}<br><small>${esc(x[1].s||'')}</small></div></div>`).join('')+(closed.length?`<small>סגורים היום: ${closed.map(c=>esc(c.he)).join(', ')}</small>`:'')+`<div class="sec" style="--c:#e63946">🎭 אפשרויות לערב</div>${items('events').slice(0,3).map(e=>`<div class="stop"><div>${esc(e.he)}<br><small>${esc(e.when||'')} · ${esc(e.price||'')}</small></div></div>`).join('')}`}
+ $('#td_o').innerHTML=h}
+
+/* ---------- הצגת עמוד ---------- */
+const TABS=[['map','🗺️','מפה ואתרים','#b3122b'],['hotels','🏨','מלונות','#7b3fbf'],['transport','🚇','תחבורה','#1d6fd6'],['rests','🍽️','מסעדות','#e63946'],['food','🥟','אוכל','#f47c20'],['shops','🛍️','קניות','#0e9aa7'],['markets','🏪','שווקים','#1b9e5a'],['tips','💡','טיפים','#b8860b'],['routes','🧭','מסלולים','#14213d'],['area','📍','אזור שינה','#7b3fbf'],['events','🎭','אירועים','#e63946'],['news','🔔','עדכונים','#c0392b']];
+function drawTabs(){$('#tabs').innerHTML=TABS.map(t=>`<button data-a="tab" data-v="${t[0]}" class="${S.tab===t[0]?'on':''}" style="${S.tab===t[0]?'background:'+t[3]:''}">${t[1]} ${t[2]}</button>`).join('')}
+function render(keepScroll){const y=keepScroll?scrollY:0;drawTabs();const m=$('#main'),t=S.tab;MAPS={};
+ if(t==='map'){m.innerHTML=mainMapHtml()+pageList('map').replace(/<h2>.*?<\/h2>/,'');drawList('map');initMainMap()}
+ else if(t==='transport'){m.innerHTML=transportPage();drawList('transport');initMetro()}
+ else if(t==='tips'){m.innerHTML=pageList('tips')+tipsExtra();drawList('tips');convInit()}
+ else if(t==='routes'){m.innerHTML=routesPage();routesInit()}
+ else if(t==='news'){m.innerHTML=newsPage()}
+ else{m.innerHTML=pageList(t);drawList(t)}
+ const q=$('#q');if(q)q.oninput=()=>{F[t].q=q.value;drawList(t)};
+ if(keepScroll)scrollTo(0,y)}
+function gotoTab(t){S.tab=t;S.last.scroll=0;save();render();scrollTo(0,0)}
+
+/* ================= מפות ================= */
+let MAPS={},LP=null,PEND=null,DIRTO=null;
+function loadLeaflet(){if(window.L)return Promise.resolve();return LP||(LP=new Promise((res,rej)=>{const l=document.createElement('link');l.rel='stylesheet';l.href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';document.head.appendChild(l);const s=document.createElement('script');s.src='https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';s.onload=res;s.onerror=()=>{LP=null;rej()};document.head.appendChild(s)}))}
+function mapWrap(id,pick){return`<div class="mapwrap" id="w_${id}"><div class="fsb"><button class="btn r" data-a="fs" data-id="${id}">✖ סגור מסך מלא</button></div><div class="bar noprint">${pick?'<button class="btn gold" data-a="pick">📌 בחר מקום במפה</button>':''}<button class="btn" data-a="fs" data-id="${id}">⛶ מסך מלא</button><button class="btn l" data-a="gm" data-id="${id}">🌐 מפות גוגל</button><button class="btn l" data-a="myloc" data-id="${id}">🎯 המיקום שלי</button></div><div class="map" id="${id}"></div><iframe id="g_${id}" style="display:none;width:100%;height:46vh;border:2px solid #14213d;border-radius:12px" loading="lazy"></iframe><div id="dir_${id}"></div></div>`}
+async function mkMap(id,c,z){try{await loadLeaflet()}catch(e){const el=$('#'+id);if(el)el.innerHTML='<div class="warn" style="margin:10px">המפה האינטראקטיבית דורשת חיבור לאינטרנט. אפשר ללחוץ "מפות גוגל".</div>';return null}
+ const el=$('#'+id);if(!el)return null;const map=L.map(id).setView(c,z);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap'}).addTo(map);MAPS[id]={map,layer:L.layerGroup().addTo(map),marks:{}};return MAPS[id]}
+const mkIcon=(ico,col)=>L.divIcon({className:'',html:`<div class="mk" style="--c:${col}">${ico}</div>`,iconSize:[30,30],iconAnchor:[15,15],popupAnchor:[0,-14]});
+const popup=(sec,it,mid)=>`<b>${esc(it.he)}</b><br><small>${esc(it.en||'')}</small><div class="acts"><button class="btn sm" data-a="gocard" data-sec="${sec}" data-id="${it.id}">פרטים</button><button class="btn sm g" data-a="dirpanel" data-id="${it.id}" data-map="${mid}">🧭 הגעה</button></div>`;
+const MS={};MLINES.forEach(L=>L.st.forEach((s,i)=>{const p=s.split('|');MS[p[0]]={key:p[0],en:p[0].replace(/\d+$/,''),ru:p[1],he:p[2],ll:[+p[3],+p[4]],line:L.n,col:L.c}}));
+function metroPopup(s){const near=(MNEAR[s.key]||[]).map(findItem).filter(Boolean);return`<b>${esc(s.he)}</b><br><small>${esc(s.en)} · <span class="ru">${esc(s.ru)}</span></small><br>קו ${s.line}${near.length?'<div style="margin-top:4px"><b>מה יש בסביבה:</b>'+near.map(n=>`<div style="display:flex;gap:6px;align-items:center;margin:3px 0"><div class="mimg" data-w="${esc(n.wiki||'')}" style="width:56px;height:42px;border-radius:6px;background:#ddd;overflow:hidden;flex:none"></div><span>${esc(n.he)}</span></div>`).join('')+'</div>':''}<div class="acts"><button class="btn sm g" data-a="dirpanel" data-id="m:${esc(s.key)}" data-map="mt">🧭 הגעה</button></div>`}
+function bindMetroPopups(map){map.on('popupopen',async e=>{for(const d of $$('.mimg',e.popup.getElement())){const w=d.dataset.w;if(!w||d.querySelector('img'))continue;const u=await wikiImg(w);if(u){const i=new Image();i.style.cssText='width:100%;height:100%;object-fit:cover';i.src=u;d.appendChild(i)}}})}
+function mainMapHtml(){return`<h2>🗺️ מפת העיר</h2>${mapWrap('mm',true)}<h2 style="margin-top:14px">🏛️ אתרים, אטרקציות ומקומות מעניינים</h2><div class="info">מסודר לפי חשיבות – העיקריים קודם. כל הנתונים כוללים הרחבה ("▼") ואפשר להסתיר, לדרג ולערוך. מיקומים במפה משוערים.</div>`}
+async function initMainMap(){const M=await mkMap('mm',S.last.mapC||CITY.ll,S.last.mapZ||12);if(!M)return;
+ [['map',1],['hotels',1],['rests',1],['shops',1],['markets',1]].forEach(([sec])=>items(sec).forEach(it=>{if(!it.ll||S.hidden[it.id])return;const m=L.marker(it.ll,{icon:mkIcon(SEC[sec].ico,SEC[sec].col)}).bindPopup(popup(sec,it,'mm'));m.addTo(M.layer);M.marks[it.id]=m}));
+ Object.values(MS).forEach(s=>{const m=L.circleMarker(s.ll,{radius:4,color:s.col,fillColor:'#fff',fillOpacity:1,weight:2}).bindPopup(metroPopup(s));m.addTo(M.layer);M.marks['m:'+s.key]=m});bindMetroPopups(M.map);
+ M.map.on('moveend',()=>{const c=M.map.getCenter();S.last.mapC=[c.lat,c.lng];S.last.mapZ=M.map.getZoom();save()});
+ if(PEND){const p=PEND;PEND=null;selectPlace(p)}}
+function allPlaces(){const out=[];[['map','אתרים'],['hotels','מלונות'],['rests','מסעדות'],['shops','קניות'],['markets','שווקים']].forEach(([s,c])=>items(s).forEach(it=>{if(it.ll&&!S.hidden[it.id])out.push({id:it.id,he:it.he,sub:it.en||'',cat:c,ll:it.ll})}));Object.values(MS).forEach(s=>out.push({id:'m:'+s.key,he:'תחנת '+s.he,sub:s.en+' · קו '+s.line,cat:'תחנות מטרו',ll:s.ll}));return out}
+let PK={cat:'אתרים',q:''};
+function pickModal(){const cats=['אתרים','מלונות','מסעדות','תחנות מטרו','קניות','שווקים'];modal(`<h3>📌 בחירת מקום במפה</h3><div class="bar">${cats.map(c=>`<span class="chip ${PK.cat===c?'on':''}" data-a="pkcat" data-v="${c}">${c}</span>`).join('')}</div><input type="search" id="pkq" placeholder="🔍 חיפוש" value="${esc(PK.q)}" style="width:100%"><div id="pkl"></div><div class="bar"><button class="btn l" data-a="closem">סגור</button></div>`);$('#pkq').oninput=e=>{PK.q=e.target.value;pkDraw()};pkDraw()}
+function pkDraw(){const q=PK.q.toLowerCase();$('#pkl').innerHTML=allPlaces().filter(p=>p.cat===PK.cat&&(!q||(p.he+p.sub).toLowerCase().includes(q))).map(p=>`<div class="stop" data-a="selplace" data-id="${esc(p.id)}" style="cursor:pointer"><div><b>${esc(p.he)}</b><br><small>${esc(p.sub)}</small></div></div>`).join('')||'<small>אין תוצאות</small>'}
+function placeById(id){if(id.startsWith('m:')){const s=MS[id.slice(2)];return s&&{id,he:'תחנת '+s.he,ll:s.ll}}const it=findItem(id);return it&&{id,he:it.he,ll:it.ll}}
+function selectPlace(id){closeModal();const p=placeById(id);if(!p||!p.ll)return;if(S.tab!=='map'){PEND=id;gotoTab('map');return}const M=MAPS.mm;if(!M){PEND=id;return}$('#g_mm').style.display='none';$('#mm').style.display='block';M.map.flyTo(p.ll,16);const m=M.marks[id];if(m)setTimeout(()=>m.openPopup(),700);showDir('mm',p);$('#w_mm').scrollIntoView({behavior:'smooth',block:'start'})}
+function showDir(mid,p){DIRTO={mid,p};const opts=allPlaces().map(x=>`<option value="${esc(x.id)}">${esc(x.he)}</option>`).join('');
+ $('#dir_'+mid).innerHTML=`<div class="info noprint"><b>🧭 מסלול הגעה אל: ${esc(p.he)}</b><div class="bar"><label>מ־ <select id="df"><option value="cur">המיקום הנוכחי שלי</option>${opts}</select></label><label>אמצעי <select id="dm"><option value="transit">תחבורה ציבורית</option><option value="walking">הליכה</option><option value="driving">רכב / מונית</option></select></label></div><div id="dinfo" style="margin:4px 0"></div><div class="bar"><button class="btn g" data-a="dgo">פתח במפות גוגל</button><button class="btn" data-a="dembed">הצג כאן במפת גוגל</button><button class="btn l" data-a="dline">קו ישר במפה</button></div></div>`;$('#df').onchange=dInfo;$('#dm').onchange=dInfo;dInfo()}
+function dFrom(cb){const v=$('#df').value;if(v==='cur')getLoc(cb);else{const f=placeById(v);cb(f&&f.ll)}}
+function dInfo(){dFrom(f=>{if(!f||!DIRTO)return;const k=km(f,DIRTO.p.ll);$('#dinfo').innerHTML=`📏 מרחק בקו אווירי ≈ ${k.toFixed(1)} ק״מ · 🚶 הליכה ≈ ${Math.round(k*1.3/4.8*60)} דק׳`})}
+function dGo(embed){dFrom(f=>{const mode=$('#dm').value,to=DIRTO.p.ll;if(embed){const fr=$('#g_'+DIRTO.mid);fr.style.display='block';$('#'+DIRTO.mid).style.display='none';fr.src=`https://maps.google.com/maps?saddr=${f[0]},${f[1]}&daddr=${to[0]},${to[1]}&dirflg=${mode==='walking'?'w':mode==='driving'?'d':'r'}&output=embed`}else window.open(gLink(to,f,mode),'_blank')})}
+function dLine(){dFrom(f=>{const M=MAPS[DIRTO.mid];if(!M)return;if(M.line)M.map.removeLayer(M.line);M.line=L.polyline([f,DIRTO.p.ll],{color:'#e63946',dashArray:'6 8',weight:4}).addTo(M.map);M.map.fitBounds(M.line.getBounds(),{padding:[40,40]})})}
+function toggleGM(id){const fr=$('#g_'+id),mp=$('#'+id);if(fr.style.display==='none'){const M=MAPS[id];const c=M?M.map.getCenter():{lat:CITY.ll[0],lng:CITY.ll[1]};fr.src=`https://maps.google.com/maps?q=${c.lat},${c.lng}&z=13&output=embed`;fr.style.display='block';mp.style.display='none'}else{fr.style.display='none';mp.style.display='block';if(MAPS[id])MAPS[id].map.invalidateSize()}}
+function toggleFS(id){const w=$('#w_'+id);w.classList.toggle('full');setTimeout(()=>{if(MAPS[id])MAPS[id].map.invalidateSize()},200)}
+
+/* ================= מטרו ================= */
+const G={};const ed=(a,b,w,l)=>{(G[a]=G[a]||[]).push([b,w,l]);(G[b]=G[b]||[]).push([a,w,l])};
+MLINES.forEach(L=>{const k=L.st.map(s=>s.split('|')[0]);for(let i=0;i<k.length-1;i++)ed(k[i],k[i+1],1,L.n);if(L.n===5)ed(k[k.length-1],k[0],1,5)});
+MTRANS.forEach(g=>{for(let i=0;i<g.length;i++)for(let j=i+1;j<g.length;j++)if(MS[g[i]]&&MS[g[j]])ed(g[i],g[j],5,0)});
+function metroPath(a,b){const d={},prev={},done={};d[a]=0;while(true){let u=null;for(const k in d)if(!done[k]&&(u===null||d[k]<d[u]))u=k;if(u===null||u===b)break;done[u]=1;(G[u]||[]).forEach(([v,w,l])=>{if(d[v]===undefined||d[u]+w<d[v]){d[v]=d[u]+w;prev[v]=[u,l]}})}
+ if(d[b]===undefined)return null;const p=[b],ls=[];let c=b;while(c!==a){const[u,l]=prev[c];p.unshift(u);ls.unshift(l);c=u}return{p,ls}}
+function planMetro(){const a=$('#ma').value,b=$('#mb').value,o=$('#mo');if(!a||!b||a===b){o.innerHTML='';return}const r=metroPath(a,b);if(!r){o.innerHTML='<div class="warn">לא נמצא מסלול בין התחנות במודל המצומצם. השתמשו באפליקציית מפות/Yandex Metro.</div>';return}
+ let h='',i=0,dist=0,tr=0;const P=r.p;for(let k=0;k<P.length-1;k++){dist+=km(MS[P[k]].ll,MS[P[k+1]].ll);if(r.ls[k]===0)tr++}
+ while(i<P.length-1){if(r.ls[i]===0){h+=`<div class="stop"><span class="n">🔁</span><div>מעבר רגלי ל־<b>${esc(MS[P[i+1]].he)}</b> (קו ${MS[P[i+1]].line})</div></div>`;i++;continue}
+  let j=i;while(j<P.length-1&&r.ls[j]===r.ls[i])j++;const L=MLINES.find(x=>x.n===r.ls[i]);const seg=P.slice(i,j+1).map(k=>MS[k].he);h+=`<div class="stop"><span class="n" style="background:${L.c};color:${L.n===8||L.n===10||L.n===9?'#000':'#fff'}">${L.n}</span><div><b>קו ${L.n} – ${esc(L.he)}</b> (כיוון ${esc(L.ends)})<br>${seg.map(esc).join(' ← ')}<br><small>${seg.length-1} קטעים בין תחנות עיקריות</small></div></div>`;i=j}
+ o.innerHTML=`<div class="info">זמן משוער: ${Math.round(dist/0.5+tr*5+3)} דק׳ · ${tr} מעברים. <small>(המודל מציג רק תחנות עיקריות; מספר התחנות בפועל גדול יותר.)</small></div>${h}`}
+function transportPage(){const opts=MLINES.map(L=>`<optgroup label="קו ${L.n} – ${L.he}">${L.st.map(s=>{const p=s.split('|');return`<option value="${esc(p[0])}">${esc(p[2])} (${esc(p[0].replace(/\d+$/,''))})</option>`}).join('')}</optgroup>`).join('');
+ return`<h2>🚇 מטרו ותחבורה ציבורית</h2><div class="warn">כרטיסי אשראי זרים (ויזה/מאסטרקארד) לא עובדים ברוסיה. בעמדות המטרו משלמים במזומן, בכרטיס טרוייקה או באפליקציה מקומית. הנסיעות באוטובוס/חשמלית דורשות כרטיס. המחירים נכונים ל-2026 ויתעדכנו.</div>${mapWrap('mt',false)}
+ <div class="sec" style="--c:#1d6fd6">🧭 מדריך הגעה מתחנה לתחנה</div><div class="card" style="--c:#1d6fd6"><div class="bd"><div class="bar"><select id="ma"><option value="">מתחנה...</option>${opts}</select><span>←</span><select id="mb"><option value="">לתחנה...</option>${opts}</select></div><div id="mo"></div><small>המסלול מחושב על רשת תחנות עיקריות בלבד. לתכנון מדויק: Yandex Metro / Yandex Maps.</small></div></div>
+ <div class="sec" style="--c:#14213d">📖 מקרא קווים ותחנות סופיות</div><div class="card"><div class="bd">${MLINES.map(L=>`<div class="lg"><i style="background:${L.c}"></i><b>קו ${L.n}</b> ${esc(L.he)} <span class="ru">${esc(L.ru)}</span></div><small style="margin-inline-start:30px">תחנות סופיות: ${esc(L.ends)}</small>`).join('')}<div class="lg"><i style="background:#82C0C0"></i><b>קו 11</b> הטבעת הגדולה · <i style="background:#B0C6E7"></i><b>קו 12</b> בוטובסקאיה · <i style="background:#FF8DB4"></i><b>קו 15</b> נקראסובסקאיה · <i style="background:#F58220"></i><b>קו 14</b> MCC (טבעת מעל הקרקע) – לא מצוירים במפה.</div></div></div>
+ <div id="mnear"></div>
+ <div class="sec" style="--c:#0e9aa7">🎫 כרטיסים ומחירים</div><table class="t">${METRO_TICKETS.map(t=>`<tr><td><b>${esc(t[0])}</b></td><td>${esc(t[1])}</td></tr>`).join('')}</table><div class="info">הטרוייקה: אפשר להשיג בקופות המטרו (מזומן) או כרטיס וירטואלי באפליקציה מקומית. תחנות המטרו מעוטרות – שווה סיור: Mayakovskaya, Komsomolskaya (קו 5), Kievskaya, Novoslobodskaya, Ploshchad Revolyutsii (פסלי הברונזה), Kurskaya. פועל ≈05:30–01:00.</div>
+ <div class="sec" style="--c:#1d6fd6">🚕 כל אמצעי התחבורה</div>`+pageList('transport').replace(/<h2>.*?<\/h2>/,'')}
+
+async function initMetro(){['ma','mb'].forEach(i=>{const e=$('#'+i);if(e)e.onchange=planMetro});const nb=$('#mnear');if(nb){nb.innerHTML=nearHtml();loadPhotos(nb)}
+ const M=await mkMap('mt',[55.7558,37.6173],11);if(!M)return;
+ MLINES.forEach(ln=>{const pts=ln.st.map(s=>{const p=s.split('|');return[+p[3],+p[4]]});if(ln.n===5)pts.push(pts[0]);L.polyline(pts,{color:ln.c,weight:5,opacity:.85}).addTo(M.layer).bindTooltip('קו '+ln.n+' – '+ln.he)});
+ Object.values(MS).forEach(s=>{const m=L.circleMarker(s.ll,{radius:5,color:s.col,fillColor:'#fff',fillOpacity:1,weight:3}).bindPopup(metroPopup(s));m.addTo(M.layer);M.marks['m:'+s.key]=m});bindMetroPopups(M.map)}
+function nearHtml(){return'<div class="sec" style="--c:#7b3fbf">📸 תחנות עיקריות ומה מסביבן</div>'+Object.keys(MNEAR).map(k=>{const s=MS[k];if(!s)return'';const ns=MNEAR[k].map(findItem).filter(Boolean);return`<div class="card" style="--c:${s.col}"><div class="ph" style="height:110px" data-wiki="${esc(ns[0]&&ns[0].wiki||'')}">Ⓜ️</div><div class="bd"><b>${esc(s.he)}</b> <small>${esc(s.en)} · <span class="ru">${esc(s.ru)}</span> · קו ${s.line}</small><div>${ns.map(n=>esc(n.he)).join(' · ')}</div><div class="acts"><button class="btn sm g" data-a="selplace" data-id="m:${esc(k)}">📍 במפה</button></div></div></div>`}).join('')}
+
+/* ================= מסלולים ================= */
+const DC=['#b3122b','#1d6fd6','#1b9e5a','#f47c20','#7b3fbf','#0e9aa7','#c2185b','#5d4037','#455a64','#827717'];
+const MODES={walk:['🚶','הליכה'],metro:['🚇','מטרו'],bus:['🚌','אוטובוס/חשמלית'],taxi:['🚕','מונית'],car:['🚗','רכב']};
+const stopIt=x=>x.k==='c'?null:findItem(x.ref);
+const stopName=x=>x.k==='c'?x.he:(stopIt(x)||{}).he||x.he||'?';
+const stopLL=x=>x.k==='c'?x.ll:(stopIt(x)||{}).ll||x.ll||null;
+function routeForDate(iso){for(const r of S.routes){const i=Math.round((new Date(iso)-new Date(r.start))/864e5);if(i>=0&&i<r.days)return{r,i}}return null}
+function legMin(mode,k){const d=k*1.3;return Math.round(mode==='walk'?d/4.8*60:mode==='metro'?d/0.5+8:mode==='bus'?d/0.3+8:d/0.4+5)}
+function genRoute(p){const all=items('map').filter(s=>!S.hidden[s.id]&&s.ll);const hotel=p.hotel.ll;const cap=({relax:3,normal:4,fast:5})[p.pace]-((p.kids||p.seniors)?1:0);const used=new Set(),out=[];
+ const rank=id=>all.findIndex(s=>s.id===id);const sc=(s,wx)=>{let v=30-rank(s.id)*1.1;if(p.interests.includes(s.cat))v+=12;if(p.kids){if(s.cat==='מוזיאון')v-=5;if(['טבע ופארקים','חוויות'].includes(s.cat))v+=5}if(wx&&(wx.code>=51||wx.tmax<-10))v+=s.indoor?6:-8;return v};
+ const maxT=p.pace==='relax'?300:p.pace==='fast'?600:420;
+ for(let d=0;d<p.days;d++){const iso=addDays(p.start,d),wd=wdOf(iso),wx=wxFor(iso);const cand=all.filter(s=>!used.has(s.id)&&!(s.closed||[]).includes(wd));if(!cand.length)break;cand.sort((a,b)=>sc(b,wx)-sc(a,wx));
+  const first=cand[0],day=[first];let tot=first.dur||60;used.add(first.id);
+  while(day.length<cap){const last=day[day.length-1];const near=cand.filter(s=>!used.has(s.id)&&km(s.ll,first.ll)<(p.lessWalk?5:9)&&tot+(s.dur||60)<=maxT).sort((a,b)=>(sc(b,wx)-km(b.ll,last.ll)*3)-(sc(a,wx)-km(a.ll,last.ll)*3));if(!near.length)break;day.push(near[0]);used.add(near[0].id);tot+=near[0].dur||60}
+  let cur=hotel;const ord=[];const left=[...day];while(left.length){left.sort((a,b)=>km(a.ll,cur)-km(b.ll,cur));const n=left.shift();ord.push(n);cur=n.ll}
+  let prev=hotel;ord.forEach((s,i)=>{const k=km(prev,s.ll);const mode=k<(p.seniors?0.8:1.2)?'walk':((p.seniors||p.kids)&&k>4?'taxi':'metro');out.push({k:'s',ref:s.id,day:d,mode,note:'',links:[]});prev=s.ll;
+   if(i===1&&p.interests.includes('אוכל')){const rs=items('rests').filter(r=>!S.hidden[r.id]&&r.ll).sort((a,b)=>km(a.ll,s.ll)-km(b.ll,s.ll))[0];if(rs){out.push({k:'r',ref:rs.id,day:d,mode:'walk',note:'ארוחת צהריים',links:[]});prev=rs.ll}}})}
+ return out}
+function routesPage(){const cur=S.routes.find(r=>r.id===S.cur);if(cur)return routeView(cur);
+ return`<h2>🧭 מסלולים מומלצים</h2><div class="info">בנו מסלול ל-1 עד 10 ימים לפי הרכב הנוסעים, תחומי עניין ומיקום המלון. אפשר לערוך, לשמור, להדפיס ולשתף.</div><div class="bar"><button class="btn gold" data-a="newroute">➕ מסלול חדש</button><button class="btn l" data-a="impr">📂 ייבוא מסלול מקובץ</button></div>`+(S.routes.length?S.routes.map(r=>`<div class="card" style="--c:#14213d"><div class="bd"><h3>${esc(r.name)}</h3><div class="meta"><span>${fmtDMY(r.start)} · ${r.days} ימים</span><span>${r.items.length} תחנות</span></div><div class="acts"><button class="btn sm" data-a="openroute" data-id="${r.id}">פתח</button><button class="btn sm r" data-a="delroute" data-id="${r.id}">🗑 מחק</button></div></div></div>`).join(''):'<div class="info">עוד אין מסלולים שמורים.</div>')}
+function routesInit(){const r=S.routes.find(x=>x.id===S.cur);if(r)initRouteMap(r,-1)}
+function hotelOpts(sel){return items('hotels').filter(h=>h.ll).map(h=>`<option value="${esc(h.id)}" ${sel===h.id?'selected':''}>${esc(h.he)}</option>`).join('')+items('area').map(a=>`<option value="${esc(a.id)}" ${sel===a.id?'selected':''}>אזור: ${esc(a.he)}</option>`).join('')}
+function hotelFrom(v){const it=findItem(v);return it?{id:v,he:it.he,ll:it.ll||CITY.ll}:{he:'',ll:CITY.ll}}
+function routeWizard(){const ints=['היסטוריה','מוזיאון','תרבות','טבע ופארקים','דת וארכיטקטורה','תצפיות','רחובות ושכונות','חוויות','יהדות','אוכל'];
+ modal(`<h3>➕ מסלול חדש</h3><label class="fld"><b>שם המסלול</b><input type="text" id="rw_n" value="מסלול מוסקבה"></label><label class="fld"><b>תאריך תחילה</b>${dateField('rw_d',todayISO())}</label><label class="fld"><b>מספר ימים (1–10)</b><select id="rw_days">${Array.from({length:10},(_,i)=>`<option ${i==2?'selected':''}>${i+1}</option>`).join('')}</select></label>
+ <div class="bar"><label>מבוגרים <input type="number" id="rw_a" value="2" min="1" max="20" style="width:60px"></label><label>ילדים <input type="number" id="rw_k" value="0" min="0" max="20" style="width:60px"></label></div><label><input type="checkbox" id="rw_s"> יש מבוגרים/אנשים עם קושי בהליכה</label><br><label><input type="checkbox" id="rw_w" checked> פחות הליכה ברגל ופחות עליות</label>
+ <label class="fld"><b>המלון / אזור השינה</b><select id="rw_h"><option value="">מרכז העיר (ברירת מחדל)</option>${hotelOpts('')}</select></label><label class="fld"><b>קצב</b><select id="rw_p"><option value="relax">רגוע</option><option value="normal" selected>רגיל</option><option value="fast">אינטנסיבי</option></select></label>
+ <b>תחומי עניין</b><div class="bar" id="rw_i">${ints.map(i=>`<label class="chip"><input type="checkbox" value="${i}" ${['היסטוריה','תצפיות'].includes(i)?'checked':''}> ${i}</label>`).join('')}</div>
+ <div class="bar"><button class="btn g" data-a="mkroute">✨ בנה מסלול</button><button class="btn l" data-a="closem">ביטול</button></div>`)}
+function mkRoute(){const start=getDate('rw_d');if(!start){toast('תאריך לא תקין – DD/MM/YYYY');return}const p={name:$('#rw_n').value.trim()||'מסלול מוסקבה',start,days:+$('#rw_days').value,adults:+$('#rw_a').value||1,kids:+$('#rw_k').value||0,seniors:$('#rw_s').checked,lessWalk:$('#rw_w').checked,hotel:hotelFrom($('#rw_h').value),pace:$('#rw_p').value,interests:$$('#rw_i input:checked').map(x=>x.value)};
+ const r={id:'r_'+Date.now(),name:p.name,start,days:p.days,adults:p.adults,kids:p.kids,seniors:p.seniors,hotel:p.hotel,pace:p.pace,interests:p.interests,items:genRoute(p),links:[]};S.routes.push(r);S.cur=r.id;save();closeModal();render();scrollTo(0,0)}
+function routeView(r){const hot=r.hotel&&r.hotel.he?`🏨 ${esc(r.hotel.he)} · `:'';
+ let h=`<h2>🧭 ${esc(r.name)}</h2><div class="bar noprint"><button class="btn l" data-a="rback">⬅ כל המסלולים</button><button class="btn" data-a="redit">✏️ פרטי מסלול</button><button class="btn" data-a="rprint">🖨 הדפסה / PDF</button><button class="btn" data-a="rsave">💾 שמירה לקובץ</button><button class="btn g" data-a="rshare">📤 שיתוף</button></div><div class="info">${hot}${fmtDMY(r.start)} – ${fmtDMY(addDays(r.start,r.days-1))} · ${r.days} ימים · מבוגרים ${r.adults||0}${r.kids?`, ילדים ${r.kids}`:''}${r.seniors?' · יש קושי בהליכה':''}</div>`;
+ h+=mapWrap('rm',false)+`<div class="bar noprint"><span class="chip on" data-a="rday" data-v="-1">כל הימים</span>${Array.from({length:r.days},(_,d)=>`<span class="chip" data-a="rday" data-v="${d}" style="border-color:${DC[d]}">יום ${d+1}</span>`).join('')}</div>`;
+ const all=[...items('map'),...items('rests'),...items('markets'),...items('shops')].filter(x=>x.ll);
+ for(let d=0;d<r.days;d++){const iso=addDays(r.start,d),wx=wxFor(iso);const idx=r.items.map((x,i)=>i).filter(i=>r.items[i].day===d);let prev=r.hotel&&r.hotel.ll||CITY.ll;
+  h+=`<div class="day"><h4 style="background:${DC[d]}"><span>יום ${d+1} · ${WD[wdOf(iso)]} ${fmtDMY(iso)}</span><span>${wx?`${wc(wx.code)[0]} ${ltr(Math.round(wx.tmax)+'° / '+Math.round(wx.tmin)+'°')} 💧${wx.pp??'–'}%`:'אין תחזית עדיין'}</span></h4>`;
+  idx.forEach((i,n)=>{const x=r.items[i],ll=stopLL(x),k=ll?km(prev,ll):0;const it=stopIt(x);const closed=it&&it.closed&&it.closed.includes(wdOf(iso));
+   h+=`<div class="stop"><span class="n">${n+1}</span><div style="flex:1"><b>${esc(stopName(x))}</b>${closed?' <span style="color:#c00">⚠️ סגור ביום זה</span>':''}<br><small>${it?esc(it.hrs||it.s||''):''}</small>
+   <div class="bar noprint"><select data-rs="mode" data-i="${i}">${Object.entries(MODES).map(([m,v])=>`<option value="${m}" ${x.mode===m?'selected':''}>${v[0]} ${v[1]}</option>`).join('')}</select><small>${ll?`${k.toFixed(1)} ק״מ · ≈${legMin(x.mode,k)} דק׳ ${n==0?'מהמלון':'מהקודמת'}`:''}</small></div>
+   <input type="text" data-rs="note" data-i="${i}" placeholder="הערה" value="${esc(x.note||'')}" style="width:100%">${(x.links||[]).map(l=>`<div>🔗 <a href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l.d||l.u)}</a></div>`).join('')}</div>
+   <div class="acts noprint" style="flex-direction:column"><button class="btn sm l" data-a="rup" data-i="${i}">↑</button><button class="btn sm l" data-a="rdn" data-i="${i}">↓</button><button class="btn sm l" data-a="rlink" data-i="${i}">🔗</button><button class="btn sm r" data-a="rdel" data-i="${i}">✕</button></div></div>`;if(ll)prev=ll});
+  h+=`<div class="bar noprint" style="padding:6px"><select id="add_${d}"><option value="">הוסף מקום...</option>${all.map(a=>`<option value="${esc(a.id)}">${esc(a.he)}</option>`).join('')}</select><button class="btn sm g" data-a="radd" data-d="${d}">➕</button><button class="btn sm l" data-a="rday" data-v="${d}">🗺 יום זה במפה</button></div></div>`}
+ h+=`<div class="sec" style="--c:#14213d">🔗 מסמכים, תמונות וקישורים למסלול</div><div class="card"><div class="bd">${(r.links||[]).map((l,i)=>`<div class="stop">${l.img?`<img src="${l.img}" style="width:70px;border-radius:8px">`:'🔗'}<div style="flex:1">${l.u?`<a href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l.d||l.u)}</a>`:esc(l.d||'')}</div><button class="btn sm r noprint" data-a="rdellink" data-i="${i}">✕</button></div>`).join('')||'<small>אין עדיין.</small>'}<div class="bar noprint"><button class="btn sm" data-a="rlink" data-i="-1">➕ הוסף קישור / תמונה</button></div></div></div>`;return h}
+async function initRouteMap(r,day){const M=await mkMap('rm',CITY.ll,11);if(!M)return;M.layer.clearLayers();const b=[];const hl=r.hotel&&r.hotel.ll;if(hl&&(day<0||true)){L.marker(hl,{icon:mkIcon('🏨','#7b3fbf')}).addTo(M.layer).bindPopup('המלון');b.push(hl)}
+ for(let d=0;d<r.days;d++){if(day>=0&&d!==day)continue;const pts=hl?[hl]:[];r.items.filter(x=>x.day===d).forEach((x,n)=>{const ll=stopLL(x);if(!ll)return;pts.push(ll);b.push(ll);L.marker(ll,{icon:L.divIcon({className:'',html:`<div class="mk" style="--c:${DC[d]};background:${DC[d]};color:#fff;font-size:13px;font-weight:700">${n+1}</div>`,iconSize:[30,30],iconAnchor:[15,15]})}).addTo(M.layer).bindPopup(`<b>יום ${d+1}: ${esc(stopName(x))}</b>`)});if(pts.length>1)L.polyline(pts,{color:DC[d],weight:4,opacity:.8,dashArray:'8 6'}).addTo(M.layer)}
+ if(b.length)M.map.fitBounds(b,{padding:[30,30],maxZoom:15})}
+const curRoute=()=>S.routes.find(r=>r.id===S.cur);
+function routeText(r){let t=`${r.name}\n${fmtDMY(r.start)} – ${fmtDMY(addDays(r.start,r.days-1))}\n`;if(r.hotel&&r.hotel.he)t+=`מלון: ${r.hotel.he}\n`;for(let d=0;d<r.days;d++){const iso=addDays(r.start,d),w=wxFor(iso);t+=`\nיום ${d+1} – ${WD[wdOf(iso)]} ${fmtDMY(iso)}${w?` (${wc(w.code)[1]}, ${Math.round(w.tmax)}°/${Math.round(w.tmin)}°)`:''}\n`;r.items.filter(x=>x.day===d).forEach((x,n)=>{t+=` ${n+1}. ${stopName(x)} [${MODES[x.mode]?MODES[x.mode][1]:''}]${x.note?' – '+x.note:''}\n`})}return t+'\nמוכן באפליקציה "מוסקבה – מידע למטייל" · יוצר: יעקב זוהר'}
+
+/* ================= פעולות ================= */
+function copyTxt(){const t=$('#sh');t.select();try{navigator.clipboard.writeText(t.value);toast('הועתק')}catch(e){document.execCommand('copy');toast('הועתק')}}
+const A={
+ tab:d=>gotoTab(d.v),
+ more:(d,b)=>{const m=$('#m_'+d.id);const on=m.classList.toggle('on');b.textContent=on?'▲ פחות':'▼ הרחבה ופרטים';const o=S.last.open;if(on&&!o.includes(d.id))o.push(d.id);if(!on)S.last.open=o.filter(x=>x!==d.id);save()},
+ rate:d=>{S.rate[d.id]=S.rate[d.id]===+d.v?0:+d.v;save();$$(`.stars[data-id="${d.id}"]`).forEach(e=>e.outerHTML=starsHtml(d.id))},
+ hide:d=>{if(S.hidden[d.id])delete S.hidden[d.id];else S.hidden[d.id]=1;save();render(true);if(d.keep)settings()},
+ edit:d=>editModal(d.sec,d.id),add:d=>editModal(d.sec,null),saveedit:d=>saveEdit(d.sec,d.id||null),
+ resetedit:d=>{delete S.edits[d.id];save();closeModal();render(true)},
+ deluser:d=>{if(!confirm('למחוק?'))return;S.custom[d.sec]=(S.custom[d.sec]||[]).filter(x=>x.id!==d.id);save();closeModal();render(true)},
+ closem:closeModal,
+ onmap:d=>{if(S.tab==='map')selectPlace(d.id);else{PEND=d.id;gotoTab('map')}},
+ gdir:d=>{const it=findItem(d.id);if(it&&it.ll)window.open(gLink(it.ll,null,'transit'),'_blank')},
+ share:d=>{const it=findItem(d.id);shareText(it.he,itemText(it))},
+ cat:d=>{F[S.tab].cat=d.v;drawList(S.tab)},showhid:()=>{F[S.tab].hid=!F[S.tab].hid;drawList(S.tab)},
+ copy:copyTxt,shareurl:()=>shareText('מוסקבה שלי','המסלול והמקומות שלי במדריך מוסקבה:',window._shareUrl),
+ say:d=>speak(d.t),cal:d=>openCal(d.id),today:todayModal,tdother:()=>{TD.seed++;tdDraw()},
+ gonews:()=>gotoTab('news'),closealert:()=>{S.alertOff=todayISO();save();$('#alert').style.display='none'},
+ pick:pickModal,pkcat:d=>{PK.cat=d.v;pickModal()},selplace:d=>selectPlace(d.id),
+ fs:d=>toggleFS(d.id),gm:d=>toggleGM(d.id),
+ myloc:d=>getLoc(p=>{const M=MAPS[d.id];if(M){L.marker(p).addTo(M.layer).bindPopup('אתם כאן').openPopup();M.map.setView(p,15)}}),
+ dirpanel:d=>{const p=placeById(d.id);if(p)showDir(d.map,p)},dgo:()=>dGo(false),dembed:()=>dGo(true),dline:dLine,
+ gocard:d=>{if(!S.last.open.includes(d.id))S.last.open.push(d.id);if(d.sec===S.tab){const c=$('#c_'+d.id);if(c){const m=$('#m_'+d.id);m.classList.add('on');c.scrollIntoView({behavior:'smooth',block:'center'})}}else{S.tab=d.sec;render();setTimeout(()=>{const c=$('#c_'+d.id);if(c)c.scrollIntoView({block:'center'})},300)}},
+ exp:exportAll,imp:importAll,shareapp:shareApp,sendloc:sendLoc,
+ reset:()=>{if(confirm('למחוק את כל ההתאמות האישיות (הסתרות, עריכות, דירוגים, מסלולים)?')){localStorage.removeItem(LS);S=DEF();closeModal();render()}},
+ settings:settings,refresh:async()=>{toast('מרענן...');Object.keys(localStorage).filter(k=>k.startsWith('wp:')&&localStorage.getItem(k)==='').forEach(k=>localStorage.removeItem(k));await Promise.all([loadWx(true),loadRate(true)]);try{const reg=await navigator.serviceWorker.getRegistration();if(reg)reg.update()}catch(e){}render(true);toast('עודכן '+new Date().toLocaleTimeString('he-IL'))},
+ addroute:d=>{if(!S.routes.length){toast('קודם בנו מסלול בלשונית "מסלולים"');return}modal(`<h3>➕ הוספה למסלול</h3><label class="fld"><b>מסלול</b><select id="ar_r">${S.routes.map(r=>`<option value="${r.id}" ${r.id===S.cur?'selected':''}>${esc(r.name)}</option>`).join('')}</select></label><label class="fld"><b>יום</b><select id="ar_d">${Array.from({length:10},(_,i)=>`<option value="${i}">${i+1}</option>`).join('')}</select></label><div class="bar"><button class="btn g" data-a="doaddroute" data-id="${d.id}">הוסף</button><button class="btn l" data-a="closem">ביטול</button></div>`)},
+ doaddroute:d=>{const r=S.routes.find(x=>x.id===$('#ar_r').value),day=Math.min(+$('#ar_d').value,r.days-1);r.items.push({k:'s',ref:d.id,day,mode:'metro',note:'',links:[]});save();closeModal();toast('נוסף ליום '+(day+1))},
+ newroute:routeWizard,mkroute:mkRoute,openroute:d=>{S.cur=d.id;save();render();scrollTo(0,0)},rback:()=>{S.cur=null;save();render()},
+ delroute:d=>{if(confirm('למחוק את המסלול?')){S.routes=S.routes.filter(r=>r.id!==d.id);if(S.cur===d.id)S.cur=null;save();render()}},
+ rprint:()=>window.print(),rsave:()=>{const r=curRoute();saveFile((r.name||'route')+'.json',JSON.stringify({v:VERSION,route:r},null,1))},rshare:()=>{const r=curRoute();shareText(r.name,routeText(r))},
+ impr:()=>{const i=document.createElement('input');i.type='file';i.accept='.json';i.onchange=async()=>{try{const j=JSON.parse(await i.files[0].text()),r=j.route||j;if(!r.items||!r.start)throw 0;r.id='r_'+Date.now();S.routes.push(r);save();render();toast('המסלול נטען')}catch(e){toast('הקובץ לא תקין')}};i.click()},
+ rup:d=>moveStop(+d.i,-1),rdn:d=>moveStop(+d.i,1),rdel:d=>{const r=curRoute();r.items.splice(+d.i,1);save();render(true)},
+ radd:d=>{const v=$('#add_'+d.d).value;if(!v)return;const r=curRoute();r.items.push({k:'s',ref:v,day:+d.d,mode:'metro',note:'',links:[]});save();render(true)},
+ rday:d=>{const r=curRoute();$$('[data-a=rday].chip').forEach(c=>c.classList.toggle('on',c.dataset.v===d.v));initRouteMap(r,+d.v);if(d.v!=='-1')$('#w_rm').scrollIntoView({behavior:'smooth'})},
+ redit:()=>{const r=curRoute();modal(`<h3>✏️ פרטי המסלול</h3><label class="fld"><b>שם</b><input type="text" id="re_n" value="${esc(r.name)}"></label><label class="fld"><b>תאריך תחילה</b>${dateField('re_d',r.start)}</label><label class="fld"><b>ימים</b><select id="re_x">${Array.from({length:10},(_,i)=>`<option ${i+1===r.days?'selected':''}>${i+1}</option>`).join('')}</select></label><label class="fld"><b>מלון / אזור</b><select id="re_h"><option value="">מרכז העיר</option>${hotelOpts(r.hotel&&r.hotel.id)}</select></label><div class="bar"><button class="btn g" data-a="resave">💾 שמור</button><button class="btn l" data-a="closem">ביטול</button></div>`)},
+ resave:()=>{const r=curRoute(),dt=getDate('re_d');if(!dt){toast('תאריך לא תקין');return}r.name=$('#re_n').value.trim()||r.name;r.start=dt;r.days=+$('#re_x').value;r.items.forEach(x=>{if(x.day>=r.days)x.day=r.days-1});const hv=$('#re_h').value;r.hotel=hotelFrom(hv);save();closeModal();render()},
+ rlink:d=>modal(`<h3>🔗 קישור / מסמך / תמונה</h3><label class="fld"><b>כתובת קישור (לא חובה)</b><input type="text" id="lk_u" dir="ltr" placeholder="https://..."></label><label class="fld"><b>תיאור</b><input type="text" id="lk_d"></label><label class="fld"><b>תמונה (לא חובה)</b><input type="file" id="lk_f" accept="image/*"></label><div class="bar"><button class="btn g" data-a="rlinksave" data-i="${d.i}">💾 שמור</button><button class="btn l" data-a="closem">ביטול</button></div>`),
+ rlinksave:async d=>{const r=curRoute(),o={u:$('#lk_u').value.trim(),d:$('#lk_d').value.trim()};if(!o.u&&!o.d&&!$('#lk_f').files[0])return;if($('#lk_f').files[0])o.img=await readImg($('#lk_f').files[0],600);if(+d.i<0)(r.links=r.links||[]).push(o);else{const x=r.items[+d.i];(x.links=x.links||[]).push(o)}save();closeModal();render(true)},
+ rdellink:d=>{curRoute().links.splice(+d.i,1);save();render(true)}
+};
+function moveStop(i,dir){const r=curRoute(),x=r.items[i];const same=r.items.map((y,k)=>k).filter(k=>r.items[k].day===x.day);const p=same.indexOf(i)+dir;if(p<0||p>=same.length)return;const j=same[p];[r.items[i],r.items[j]]=[r.items[j],r.items[i]];save();render(true)}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b)return;const f=A[b.dataset.a];if(!f)return;if(b.tagName==='A')e.preventDefault();f(b.dataset,b,e)});
+document.addEventListener('change',e=>{const t=e.target;if(t.dataset.rs){const r=curRoute();r.items[+t.dataset.i][t.dataset.rs]=t.value;save();if(t.dataset.rs==='mode')render(true)}else if(t.dataset.note){S.note[t.dataset.note]=t.value;save()}});
+document.addEventListener('input',e=>{const t=e.target;if(t.dataset&&t.dataset.note){S.note[t.dataset.note]=t.value;save()}});
+let _sc;addEventListener('scroll',()=>{clearTimeout(_sc);_sc=setTimeout(()=>{S.last.scroll=scrollY;save()},400)},{passive:true});
+addEventListener('pagehide',save);document.addEventListener('visibilitychange',()=>{if(document.hidden)save()});
+
+/* ================= הפעלה: עותק יחיד, שיתוף, התחלה ================= */
+function dupScreen(){const d=$('#dup');d.style.display='flex';d.innerHTML='<div>🧭 האפליקציה כבר פתוחה בחלון אחר.<br>עברו לחלון הפתוח – אפשר לסגור את החלון הזה.</div>';try{window.close()}catch(e){}}
+function singleInstance(){let primary=false,got=false;try{const bc=new BroadcastChannel('moscow-guide-app');bc.onmessage=e=>{if(e.data==='hi'&&primary){bc.postMessage('here');try{window.focus()}catch(_){}}else if(e.data==='here'&&!primary&&!got){got=true;dupScreen()}};bc.postMessage('hi');setTimeout(()=>{if(!got)primary=true},600)}catch(e){}}
+async function checkShareHash(){const m=/^#s=(.+)$/.exec(location.hash);if(!m)return;try{const d=JSON.parse(await b64d(m[1]));modal(`<h3>📥 קיבלת "מוסקבה" מותאמת אישית</h3><p>חבר שלח לך מקומות, מסלולים והערות. לטעון אותם? (הם יתמזגו עם מה שכבר יש לך ולא ימחקו אותו.)</p><div class="bar"><button class="btn g" id="shyes">כן, לטעון</button><button class="btn l" data-a="closem">לא עכשיו</button></div>`);$('#shyes').onclick=()=>{mergeData(d);closeModal();history.replaceState(null,'',location.pathname);toast('נטען')}}catch(e){toast('הקישור לא תקין')}}
+function boot(){$('#hdr').innerHTML=`<img src="${ICON}" alt=""><div class="t"><b>מוסקבה, רוסיה – מידע למטייל</b><small>יוצר: <i>יעקב זוהר</i></small></div><button class="hb" data-a="refresh" title="רענון">🔄</button><button class="hb" data-a="settings" title="הגדרות">⚙️</button>`;
+ alertStrip();renderWx();loadWx();loadRate();render();setTimeout(()=>{if(S.last.scroll)scrollTo(0,S.last.scroll)},400);setInterval(renderWx,60000);singleInstance();checkShareHash();
+ if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('sw.js').catch(()=>{})}
+boot();
+
+</script></body></html>
